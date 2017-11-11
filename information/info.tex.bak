@@ -1,0 +1,8 @@
+\pagestyle{fancy}
+\rhead{信息与计算}
+\chead{\zihao{-5}华南师范大学数学科学学院\\\zihao{5}模式识别课程}
+\lhead{2016年12月}
+\cfoot{}
+\rfoot{\thepage}
+
+

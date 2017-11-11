@@ -1,0 +1,25 @@
+\section{数学公式示例}
+If the integral of function $f$ is measurable and non-negative, we define
+its (extended) \textbf{Lebesgue integral} by
+\begin{equation}
+    \int f = \sup_g \int g,
+\end{equation}
+where the supremum is taken over all measurable functions $g$ such that
+$0 \leq g \leq f$, and where $g$ is bounded and supported on a set of
+finite measure.
+
+
+Simple examples of functions on $\mathbb{R}^d$ that are integrable
+(or non-integrable) are given by
+\begin{equation}
+f_a(x) =
+\begin{cases}
+|x|^{-a} & \text{if } |x| \leq 1,\\
+0 & \text{if } x > 1.
+\end{cases}
+\end{equation}
+\begin{equation}
+F_a(x) = \frac{1}{1 + |x|^a}, \qquad \text{all } x \in \mathbb{R}^d.
+\end{equation}
+Then $f_a$ is integrable exactly when $a < d$, while $F_a$ is integrable
+exactly when $a > d$.

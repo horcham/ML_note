@@ -1,0 +1,13 @@
+\section{模板使用方法}
+\begin{itemize}
+  \item 看懂示例文档后, 删除(也可以保存起来备忘)YourFile文件夹中, 除abstract和reference外的所有tex文件
+  \item 在YourFile中建立你的tex文件, 比如MyTex.tex, 在里面写入你的内容.可以建立多个文件, 比如Introduction.tex, Model.tex, Conclusion.tex
+\item 在PR\_thesis文件夹下打开PatternRecognition.tex,参照原来的input语句, 把input的文件换成你自己写的tex文件, 比如input\{YourFile/MyTex.tex\}
+  \item 修改YourFile/abstract里的摘要内容和YourFile/reference里的参考文献
+  \item 若需要用到图片直接把图片放在figures文件夹就好了, 引用时不需要加路径, eps格式的文件不加图片后缀也可以. 直接写图片名称就好,详见YourFile/titleAndFigure.tex
+  \item Windows用户双击PR\_thesis中的compile.bat文件, Linux用户当前文件夹终端输入sh compile.sh(可使用Tab补全名称)即可
+  \item 编译完成会自动弹出pdf文件\cite{handy2003planning}
+  \item 请不要像以前自己使用那样在IDE里直接点\textbf{编译}. 正确的打开方式是\textbf{点compile运行}, 不然会出现引用、参考文献等不出现的问题, 或者提示minted包出错.
+  \item 若按照以上工作流程执行, 扔给出没有minted这个包的错误, 可以把thesis/scnu.sty文件里最后一个包minted删除, 这是用于美观地展示代码的包, 没有这个包可能因为你的texlive版本过旧.
+  \item 如果您会使用bibtex, 可以把PatternRecognition.tex中最后两句注释取消, 把input\{YourFile/reference\}注释掉. 在YourFile/reference.bib中粘贴bibtex格式的代码即可.
+\end{itemize}

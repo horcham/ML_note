@@ -1,0 +1,200 @@
+\section{线性回归与梯度下降}
+\subsection{符号说明}
+\begin{center}
+\begin{tabular}{cc}
+\toprule[2pt]
+变量 & 含义 \\ 
+\midrule[1pt]
+$x^{(i)}$ & 第$i$个特征输入(features) \\ 
+$y^{(i)}$ & 第$i$个目标输出(target) \\ 
+$(x^{(i)},y^{(i)})$ & 第$i$个训练样本 \\ 
+$\mathbf{X}$ & 输入向量空间，为列向量 \\ 
+$\mathbf{y}$ & 输出变量 \\ 
+$m$ & 数据样本个数 \\
+$n$ & 输入变量的特征个数\\
+$\theta$ & 参数向量，为列向量\\
+\bottomrule[2pt]
+\end{tabular}
+\end{center}
+
+
+\subsection{线性回归}
+考虑线性函数
+\begin{eqnarray}
+h_\theta(x)=\theta_0+\theta_1x_1+\theta_2x_2+\cdots+\theta_nx_n
+\end{eqnarray}
+为了简化$h_\theta(x)$，将$x_0=1$引入，令$\mathbf{\theta(x)}=(\theta_0,\theta_1,\cdots,\theta_n)^T$，则有
+\begin{eqnarray}
+h_\theta(x)
+&=&\sum_{i=0}^n\theta_ix_i\\
+&=&
+\begin{pmatrix}
+\theta_0&\theta_1&\cdots & \theta_n
+\end{pmatrix}
+\begin{pmatrix}
+1\\
+x_1\\
+\vdots\\
+x_n
+\end{pmatrix}\\
+&=&\mathbf{\theta}^Tx
+\end{eqnarray}
+定义损失函数
+\begin{eqnarray}
+J(\theta)=\frac{1}{2}\sum_{i=1}^m(h_\theta(x^{(i)})-y^{(i)})^2
+\end{eqnarray}
+该方法被称为普通最小二乘方法（ordinary least squares）。其中，增加系数$\frac{1}{2}$是为了求导方便，而不影响其方向。
+\subsection{LMS与梯度下降法}
+为了通过最小化误差函数$J(\theta)$来求解最优的$\theta$。其中一个方法是采用梯度下降法。梯度下降法采用迭代$\theta$来使得$J(\theta)$变小，直到达到一定的值之后停止迭代。该算法任意初始化一个$\theta$,通过如下方式更新
+\begin{eqnarray}
+\theta_j := \theta_j-\alpha\frac{\partial}{\partial \theta_j}J(\theta)
+\end{eqnarray}
+其中，$\alpha$为学习率（learning rate），决定每次迭代的调整尺度。若对单个的训练样本$(x^{(i)},y^{(i)})$，计算$J(\theta)$的偏导，有
+\begin{eqnarray}
+\frac{\partial}{\partial \theta_j}
+&=&\frac{\partial}{\partial \theta_j}\frac{1}{2}(h_\theta(x^{(i)})-y^{(i)})^2\\
+&=&(h_\theta(x^{(i)})-y^{(i)})\frac{\partial}{\partial\theta_j}(h_\theta(x^{(i)})-y^{(i)})\\
+&=&(h_\theta(x)-y^{(i)})\frac{\partial}{\partial\theta_j}
+\left(
+\begin{aligned}
+\sum_{i=1}^n\theta_ix^{(i)}_i-y^{(i)}
+\end{aligned}
+\right)\\
+&=&(h_\theta(x^{(i)})-y^{(i)})x_j
+\end{eqnarray}
+因而，其更新规则为
+\begin{eqnarray}
+\theta_j:=\theta_j+\alpha(y^{(i)}-h_\theta(x^{(i)}))x^{(i)}_j
+\end{eqnarray}
+该规则被称为LMS(least mean squares)。在迭代过程中，通常不会选择大的学习率，因其会产生过拟合的情况，或产生在最优解附近震荡。一般情况下，对$J(\theta)$的最优值求解是二次规划问题，是有最优解的。假设$m$是数据样本个数，梯度下降法考虑遍历所有数据样本之后，在对参数$\mathbf{\theta}$进行更新，公式如下
+\begin{eqnarray}
+\theta_j:=\theta_j+\alpha\sum_{i=1}^m(y^{(i)}-h_\theta(x^{(i)}))x_j^{(i)}
+\end{eqnarray}
+由于这种更新方式需要遍历所有的数据样本，其迭代速度会比较慢，以下两种方法是对梯度下降法的改进算法。
+\subsection{随机梯度下降法(incremental gradient descent)}
+在样本中随机抽取一个样本，并采取式(11)调整$\theta_j$，循环直到误差值符合收敛条件。这种算法是对梯度下降法的改进，其对抽取的一个样本便进行调整，而无需式（12）进行遍历，计算速度会显著加快。但因其采用片面的数据作调整，其调整的梯度有可能并非是最优方向，因而其有可能会陷入局部最优解，且需要更多次迭代来达到收敛条件。
+\subsection{批量梯度下降法(batch gradient descnet)}
+这是一种对于梯度下降法和随机梯度下降法的这种方法。假设采集批量为$p$，则在数据集中做$p$次采样，拓展成一个有$p$个样本的数据集，通过式(12)来更新$\theta$。此方法常会取得好的效果。
+\subsection{线性回归的显式求解}
+设矩阵$A=
+\begin{pmatrix}
+a_{11} & \cdots & a_{1n}\\
+\vdots & \ddots & \vdots\\
+a_{m1} & \cdots & a_{mn}
+\end{pmatrix}
+$
+，
+$B=
+\begin{pmatrix}
+b_{11} & \cdots & b_{1n}\\
+\vdots & \ddots & \vdots\\
+b_{m1} & \cdots & b_{mn}
+\end{pmatrix}
+$
+，$\textbf{tr}(A)$为矩阵$A$的迹，即对角线上元素之和，$a\in \mathbb{R}$，函数$f$定义为$f(A)=AB$，
+则有如下结论
+\begin{eqnarray}
+\textbf{tr}AB&=&\textbf{tr}BA\\
+\textbf{tr}ABC&=&\textbf{tr}CAB = \textbf{tr}BCA\\
+\textbf{tr}A&=&\textbf{tr}A^T\\
+\textbf{tr}(A+B)&=&\textbf{tr}A+\textbf{tr}B\\
+\textbf{tr}aA&=&a\textbf{tr}A\\
+\nabla_{A}\textbf{tr}AB &=& B^T\\
+\nabla_A \textbf{tr}(ABA^TC) &=& CAB+C^TAB^T\\
+\nabla_{A^T}f(A)&=&(\nabla_Af(A))^T\\
+\nabla_A|A|&=&|A|(A^{-1})
+\end{eqnarray}
+我们将第$i$个样本的输入记为$x^{(i)}$，其为列向量：
+\begin{eqnarray}
+x^{(i)}=(x^{(i)}_1,x^{(i)}_2,\cdots,x^{(i)}_n)^T
+\end{eqnarray}
+则样本输入可表示为
+\begin{eqnarray}
+X=
+\begin{pmatrix}
+(x^{(1)})^T\\
+(x^{(2)})^T\\
+\vdots\\
+(x^{(n)})^T
+\end{pmatrix}
+\end{eqnarray}
+将样本输出记为
+\begin{eqnarray}
+Y=
+\begin{pmatrix}
+y^{(1)}\\
+y^{(2)}\\
+\vdots\\
+y^{(n)}
+\end{pmatrix}
+\end{eqnarray}
+
+由于$\theta$为列向量，因而有
+\begin{eqnarray}
+\begin{aligned}
+X\theta-Y
+&=
+\begin{pmatrix}
+(x^{(1)})^T\theta\\
+(x^{(2)})^T\theta\\
+\vdots\\
+(x^{(m)})^T\theta
+\end{pmatrix}
+-
+\begin{pmatrix}
+y^{(1)}\\
+y^{(2)}\\
+\vdots\\
+y^{(m)}
+\end{pmatrix}\\
+&=
+\begin{pmatrix}
+(x^{(1)})^T\theta-y^{(1)}\\
+(x^{(2)})^T\theta-y^{(2)}\\
+\vdots\\
+(x^{(m)})^T\theta-y^{(m)}
+\end{pmatrix}
+\end{aligned}
+\end{eqnarray}
+由于对于列向量$z$，有$z^Tz=\sum_iz_i^2$，因而有
+\begin{eqnarray}
+\begin{aligned}
+J(\theta)&=\frac{1}{2}\sum_{i=1}^m(h_\theta(x^{(i)})-y^{(i)})^2\\
+&= \frac{1}{2}(X\theta-Y)^T(X\theta-Y)\end{aligned}
+\end{eqnarray}
+因而有
+\begin{eqnarray}
+\begin{aligned}
+\nabla_\theta J(\theta)&=\nabla_\theta\frac{1}{2}\sum_{i=1}^m(h_\theta(x^{(i)})-y^{(i)})^2\\
+&=\frac{1}{2}\nabla_\theta((X\theta)^T(X\theta)-(X\theta)^TY-Y^T(X\theta)-Y^TY)\\
+&=\frac{1}{2}\nabla_\theta(\theta^TX^TX\theta-\theta^TX^TY-Y^TX\theta-Y^TY)\\\end{aligned}
+\end{eqnarray}
+由于$\theta^TX^TX\theta-\theta^TX^TY-Y^TX\theta-Y^TY$为数，即$1\times1$的矩阵，因而有
+\begin{eqnarray}
+\begin{aligned}
+\theta^TX^TX\theta-\theta^TX^TY-Y^TX\theta-Y^TY=\textbf{tr}(\theta^TX^TX\theta-\theta^TX^TY-Y^TX\theta-Y^TY)
+\end{aligned}
+\end{eqnarray}
+所以有
+\begin{eqnarray}
+\begin{aligned}
+\nabla_\theta J(\theta)
+ &=\frac{1}{2}\nabla_\theta(\theta^TX^TX\theta-\theta^TX^TY-Y^TX\theta-Y^TY)\\
+&=\frac{1}{2}\nabla_\theta\textbf{tr}(\theta^TX^TX\theta-\theta^TX^TY-Y^TX\theta-Y^TY)\\
+&=\frac{1}{2}\nabla_\theta(\textbf{tr}\theta^TX^TX\theta-\textbf{tr}\theta^TX^TY-\textbf{tr}Y^TX\theta+\textbf{tr}Y^TY)
+\end{aligned}
+\end{eqnarray}
+由于$\textbf{tr}AB=\textbf{tr}BA$，因而有$\textbf{tr}\theta^TX^TY=\textbf{tr}Y^TX\theta$，且$\nabla_\theta\textbf{tr}Y^TY=0$，于是有
+\begin{eqnarray}
+\begin{aligned}
+\nabla_\theta J(\theta)&=\frac{1}{2}\nabla_\theta(\textbf{tr}\theta^TX^TX\theta-2\textbf{tr}Y^TX\theta)\\
+&=\frac{1}{2}(X^TX\theta+X^TX\theta-2X^TY)\\
+&=X^TX\theta-X^TY
+\end{aligned}
+\end{eqnarray}
+令$\nabla_\theta J(\theta)=X^TX\theta-X^TY=0$，则可得到
+$X^TX\theta-X^TY$
+一般情况下，$X^TX$为可逆矩阵，因而有
+\begin{eqnarray}
+\theta=(X^TX)^{-1}X^TY
+\end{eqnarray}

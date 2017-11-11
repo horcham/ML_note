@@ -1,0 +1,1004 @@
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.12.2)  21 MAY 2017 00:41
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**file.tex
+(./file.tex
+LaTeX2e <2016/03/31>
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
+! Undefined control sequence.
+l.1 \section
+            {线性回归与梯度下降}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \section{线
+                性回归与梯度下降}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no 线 in font nullfont!
+Missing character: There is no 性 in font nullfont!
+Missing character: There is no 回 in font nullfont!
+Missing character: There is no 归 in font nullfont!
+Missing character: There is no 与 in font nullfont!
+Missing character: There is no 梯 in font nullfont!
+Missing character: There is no 度 in font nullfont!
+Missing character: There is no 下 in font nullfont!
+Missing character: There is no 降 in font nullfont!
+! Undefined control sequence.
+l.2 \subsection
+               {符号说明}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no 符 in font nullfont!
+Missing character: There is no 号 in font nullfont!
+Missing character: There is no 说 in font nullfont!
+Missing character: There is no 明 in font nullfont!
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 3.
+! Undefined control sequence.
+l.4 \toprule
+            [2pt]
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no 变 in font nullfont!
+Missing character: There is no 量 in font nullfont!
+Missing character: There is no 含 in font nullfont!
+Missing character: There is no 义 in font nullfont!
+! Undefined control sequence.
+<recently read> \midrule 
+                         
+l.6 \midrule
+            [1pt]
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no 第 in font nullfont!
+Missing character: There is no 个 in font nullfont!
+Missing character: There is no 特 in font nullfont!
+Missing character: There is no 征 in font nullfont!
+Missing character: There is no 输 in font nullfont!
+Missing character: There is no 入 in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no 第 in font nullfont!
+Missing character: There is no 个 in font nullfont!
+Missing character: There is no 目 in font nullfont!
+Missing character: There is no 标 in font nullfont!
+Missing character: There is no 输 in font nullfont!
+Missing character: There is no 出 in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no 第 in font nullfont!
+Missing character: There is no 个 in font nullfont!
+Missing character: There is no 训 in font nullfont!
+Missing character: There is no 练 in font nullfont!
+Missing character: There is no 样 in font nullfont!
+Missing character: There is no 本 in font nullfont!
+Missing character: There is no 输 in font nullfont!
+Missing character: There is no 入 in font nullfont!
+Missing character: There is no 向 in font nullfont!
+Missing character: There is no 量 in font nullfont!
+Missing character: There is no 空 in font nullfont!
+Missing character: There is no 间 in font nullfont!
+Missing character: There is no 输 in font nullfont!
+Missing character: There is no 出 in font nullfont!
+Missing character: There is no 变 in font nullfont!
+Missing character: There is no 量 in font nullfont!
+Missing character: There is no 空 in font nullfont!
+Missing character: There is no 间 in font nullfont!
+! Undefined control sequence.
+<recently read> \bottomrule 
+                            
+l.12 \bottomrule
+                [2pt]
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no ] in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 1--14
+[]
+ []
+
+
+Overfull \hbox (45.80284pt too wide) in paragraph at lines 1--14
+[] 
+ []
+
+! Undefined control sequence.
+l.16 \subsection
+                {线性回归}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.16 \subsection{线
+                    性回归}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no 线 in font nullfont!
+Missing character: There is no 性 in font nullfont!
+Missing character: There is no 回 in font nullfont!
+Missing character: There is no 归 in font nullfont!
+Missing character: There is no 考 in font nullfont!
+Missing character: There is no 虑 in font nullfont!
+Missing character: There is no 线 in font nullfont!
+Missing character: There is no 性 in font nullfont!
+Missing character: There is no 函 in font nullfont!
+Missing character: There is no 数 in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 16--18
+[]
+ []
+
+
+Overfull \hbox (166.9082pt too wide) in alignment at lines 18--20
+ [][][] []
+ []
+
+Missing character: There is no 为 in font nullfont!
+Missing character: There is no 了 in font nullfont!
+Missing character: There is no 简 in font nullfont!
+Missing character: There is no 化 in font nullfont!
+Missing character: There is no ， in font nullfont!
+Missing character: There is no 将 in font nullfont!
+Missing character: There is no 引 in font nullfont!
+Missing character: There is no 入 in font nullfont!
+Missing character: There is no ， in font nullfont!
+Missing character: There is no 令 in font nullfont!
+Missing character: There is no ， in font nullfont!
+Missing character: There is no 则 in font nullfont!
+Missing character: There is no 有 in font nullfont!
+
+Overfull \hbox (44.53584pt too wide) in paragraph at lines 20--22
+$\OML/cmm/m/it/10 h[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )$$\OML
+/cmm/m/it/10 x[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (34.37497pt too wide) in paragraph at lines 20--22
+\OT1/cmr/m/n/10 1$$[] =
+ []
+
+
+Overfull \hbox (67.02061pt too wide) in paragraph at lines 20--22
+\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 ^^R[]; ^^R[]; [] ; ^^R[]\OT1/cmr/m/n/10 ][]$ 
+
+ []
+
+
+! LaTeX Error: Environment aligned undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.28 \begin{aligned}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra }, or forgotten \endgroup.
+<template> }
+            $\hfil \endtemplate 
+l.30 x
+      _1\\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.30 x
+      _1\\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing \right. inserted.
+<inserted text> 
+                \right .
+l.30 x
+      _1\\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.30 x
+      _1\\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+
+! LaTeX Error: \begin{eqnarray} on input line 22 ended by \end{aligned}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.33 \end{aligned}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.33 \end{aligned}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.33 \end{aligned}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.33 \end{aligned}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.33 \end{aligned}
+                  
+I'm guessing that you meant to end an alignment here.
+
+! Missing { inserted.
+<inserted text> 
+                {
+l.33 \end{aligned}
+                  
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.33 \end{aligned}
+                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (91.25551pt too wide) in alignment at lines 22--33
+ [][][] []
+ []
+
+! Missing $$ inserted.
+<to be read again> 
+                   \endgroup 
+l.33 \end{aligned}
+                  
+Displays can use special alignments (like \eqalignno)
+only if nothing but the alignment itself is between $$'s.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.34 \right
+           ]\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra \right.
+l.34 \right]
+            \\
+I'm ignoring a \right that had no matching \left.
+
+! Misplaced alignment tab character &.
+<recently read> &
+                 
+l.35 &
+      =&\mathbf{\theta}^Tx
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.35 &=&
+        \mathbf{\theta}^Tx
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+\reserved@a ->&
+                & &
+l.36 \end{eqnarray}
+                   
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+\reserved@a ->& &
+                  &
+l.36 \end{eqnarray}
+                   
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+\reserved@a ->& & &
+                   
+l.36 \end{eqnarray}
+                   
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \cr.
+\@@eqncr ...l \@eqnswtrue \global \@eqcnt \z@ \cr 
+                                                  
+l.36 \end{eqnarray}
+                   
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Extra }, or forgotten $.
+\endeqnarray ->\@@eqncr \egroup 
+                                \global \advance \c@equation \m@ne $$\@ignor...
+l.36 \end{eqnarray}
+                   
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+! LaTeX Error: \begin{document} ended by \end{eqnarray}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.36 \end{eqnarray}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.36 \end{eqnarray}
+                   
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.36 \end{eqnarray}
+                   
+Things are pretty mixed up, but I think the worst is over.
+
+Missing character: There is no 定 in font nullfont!
+Missing character: There is no 义 in font nullfont!
+Missing character: There is no 损 in font nullfont!
+Missing character: There is no 失 in font nullfont!
+Missing character: There is no 函 in font nullfont!
+Missing character: There is no 数 in font nullfont!
+
+Overfull \hbox (7.7778pt too wide) in paragraph at lines 33--38
+\OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (29.76497pt too wide) in paragraph at lines 33--38
+\OML/cmm/m/it/10 ^^R[]x[]$$$ 
+ []
+
+
+Overfull \hbox (128.78653pt too wide) in alignment at lines 38--40
+ [][][] []
+ []
+
+! Undefined control sequence.
+l.41 \subsection
+                {梯度下降法与LMS算法}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no 梯 in font nullfont!
+Missing character: There is no 度 in font nullfont!
+Missing character: There is no 下 in font nullfont!
+Missing character: There is no 降 in font nullfont!
+Missing character: There is no 法 in font nullfont!
+Missing character: There is no 与 in font nullfont!
+Missing character: There is no L in font nullfont!
+Missing character: There is no M in font nullfont!
+Missing character: There is no S in font nullfont!
+Missing character: There is no 算 in font nullfont!
+Missing character: There is no 法 in font nullfont!
+Missing character: There is no 为 in font nullfont!
+Missing character: There is no 了 in font nullfont!
+Missing character: There is no 通 in font nullfont!
+Missing character: There is no 过 in font nullfont!
+Missing character: There is no 最 in font nullfont!
+Missing character: There is no 小 in font nullfont!
+Missing character: There is no 化 in font nullfont!
+Missing character: There is no 误 in font nullfont!
+Missing character: There is no 差 in font nullfont!
+Missing character: There is no 函 in font nullfont!
+Missing character: There is no 数 in font nullfont!
+Missing character: There is no 来 in font nullfont!
+Missing character: There is no 求 in font nullfont!
+Missing character: There is no 解 in font nullfont!
+Missing character: There is no 最 in font nullfont!
+Missing character: There is no 优 in font nullfont!
+Missing character: There is no 的 in font nullfont!
+Missing character: There is no 。 in font nullfont!
+Missing character: There is no 其 in font nullfont!
+Missing character: There is no 中 in font nullfont!
+Missing character: There is no 一 in font nullfont!
+Missing character: There is no 个 in font nullfont!
+Missing character: There is no 方 in font nullfont!
+Missing character: There is no 法 in font nullfont!
+Missing character: There is no 是 in font nullfont!
+Missing character: There is no 采 in font nullfont!
+Missing character: There is no 用 in font nullfont!
+Missing character: There is no 梯 in font nullfont!
+Missing character: There is no 度 in font nullfont!
+Missing character: There is no 下 in font nullfont!
+Missing character: There is no 降 in font nullfont!
+Missing character: There is no 法 in font nullfont!
+Missing character: There is no 。 in font nullfont!
+Missing character: There is no 梯 in font nullfont!
+Missing character: There is no 度 in font nullfont!
+Missing character: There is no 下 in font nullfont!
+Missing character: There is no 降 in font nullfont!
+Missing character: There is no 法 in font nullfont!
+Missing character: There is no 采 in font nullfont!
+Missing character: There is no 用 in font nullfont!
+Missing character: There is no 迭 in font nullfont!
+Missing character: There is no 代 in font nullfont!
+Missing character: There is no 来 in font nullfont!
+Missing character: There is no 使 in font nullfont!
+Missing character: There is no 得 in font nullfont!
+Missing character: There is no 变 in font nullfont!
+Missing character: There is no 小 in font nullfont!
+Missing character: There is no ， in font nullfont!
+Missing character: There is no 直 in font nullfont!
+Missing character: There is no 到 in font nullfont!
+Missing character: There is no 达 in font nullfont!
+Missing character: There is no 到 in font nullfont!
+Missing character: There is no 一 in font nullfont!
+Missing character: There is no 定 in font nullfont!
+Missing character: There is no 的 in font nullfont!
+Missing character: There is no 值 in font nullfont!
+Missing character: There is no 之 in font nullfont!
+Missing character: There is no 后 in font nullfont!
+Missing character: There is no 停 in font nullfont!
+Missing character: There is no 止 in font nullfont!
+Missing character: There is no 迭 in font nullfont!
+Missing character: There is no 代 in font nullfont!
+Missing character: There is no 。 in font nullfont!
+Missing character: There is no 该 in font nullfont!
+Missing character: There is no 算 in font nullfont!
+Missing character: There is no 法 in font nullfont!
+Missing character: There is no 任 in font nullfont!
+Missing character: There is no 意 in font nullfont!
+Missing character: There is no 初 in font nullfont!
+Missing character: There is no 始 in font nullfont!
+Missing character: There is no 化 in font nullfont!
+Missing character: There is no 一 in font nullfont!
+Missing character: There is no 个 in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no 通 in font nullfont!
+Missing character: There is no 过 in font nullfont!
+Missing character: There is no 如 in font nullfont!
+Missing character: There is no 下 in font nullfont!
+Missing character: There is no 方 in font nullfont!
+Missing character: There is no 式 in font nullfont!
+Missing character: There is no 更 in font nullfont!
+Missing character: There is no 新 in font nullfont!
+
+Overfull \hbox (53.43063pt too wide) in paragraph at lines 40--43
+ $\OML/cmm/m/it/10 J\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^R\OT1/cmr/m/n/10 )$$\OM
+L/cmm/m/it/10 ^^R$$^^R$$J\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^R\OT1/cmr/m/n/10 )
+$$\OML/cmm/m/it/10 ^^R$ 
+ []
+
+
+Overfull \hbox (89.01274pt too wide) in alignment at lines 43--45
+ [][][] []
+ []
+
+! Undefined control sequence.
+l.48 \subsection
+                {矩阵乘法定理与证明}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.48 \subsection{矩
+                    阵乘法定理与证明}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no 矩 in font nullfont!
+Missing character: There is no 阵 in font nullfont!
+Missing character: There is no 乘 in font nullfont!
+Missing character: There is no 法 in font nullfont!
+Missing character: There is no 定 in font nullfont!
+Missing character: There is no 理 in font nullfont!
+Missing character: There is no 与 in font nullfont!
+Missing character: There is no 证 in font nullfont!
+Missing character: There is no 明 in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 48--49
+[] 
+ []
+
+
+Overfull \hbox (140.18556pt too wide) in alignment at lines 49--56
+ [][][] []
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.58 \begin{eqnarray}
+                     
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 58--58
+[] 
+ []
+
+! Extra }, or forgotten \endgroup.
+<template> }
+            $\@eqnsel \endtemplate 
+l.62 \vdots
+           \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.62 \vdots
+           \\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.62 \vdots
+           \\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+
+! LaTeX Error: \begin{eqnarray} on input line 58 ended by \end{matrix}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.64 \end{matrix}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.64 \end{matrix}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.64 \end{matrix}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.64 \end{matrix}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.64 \end{matrix}
+                 
+I'm guessing that you meant to end an alignment here.
+
+! Missing { inserted.
+<inserted text> 
+                {
+l.64 \end{matrix}
+                 
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.64 \end{matrix}
+                 
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (94.18044pt too wide) in alignment at lines 58--64
+ [][][] []
+ []
+
+! Missing $$ inserted.
+<to be read again> 
+                   \endgroup 
+l.64 \end{matrix}
+                 
+Displays can use special alignments (like \eqalignno)
+only if nothing but the alignment itself is between $$'s.
+
+! Misplaced alignment tab character &.
+\reserved@a ->&
+                & &
+l.65 \end{eqnarray}
+                   
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+\reserved@a ->& &
+                  &
+l.65 \end{eqnarray}
+                   
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+\reserved@a ->& & &
+                   
+l.65 \end{eqnarray}
+                   
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \cr.
+\@@eqncr ...l \@eqnswtrue \global \@eqcnt \z@ \cr 
+                                                  
+l.65 \end{eqnarray}
+                   
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Too many }'s.
+\endeqnarray ->\@@eqncr \egroup 
+                                \global \advance \c@equation \m@ne $$\@ignor...
+l.65 \end{eqnarray}
+                   
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+
+Overfull \hbox (17.77783pt too wide) in paragraph at lines 64--65
+   \OT1/cmr/m/n/10 (19) 
+ []
+
+
+! LaTeX Error: \begin{document} ended by \end{eqnarray}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.65 \end{eqnarray}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.65 \end{eqnarray}
+                   
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Display math should end with $$.
+<to be read again> 
+                   \endgroup 
+l.65 \end{eqnarray}
+                   
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.65 \end{eqnarray}
+                   
+Things are pretty mixed up, but I think the worst is over.
+
+Missing character: There is no 又 in font nullfont!
+
+Overfull \hbox (27.03577pt too wide) in paragraph at lines 65--67
+ $\OML/cmm/m/it/10 z[]z \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (25.12793pt too wide) in paragraph at lines 65--67
+[][] \OML/cmm/m/it/10 z[]$ 
+ []
+
+
+Overfull \hbox (92.64825pt too wide) in alignment at lines 67--70
+ [][][] []
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.72 \begin{eqnarray}
+                     
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 72--72
+[] 
+ []
+
+
+Overfull \hbox (249.7907pt too wide) in alignment at lines 72--85
+ [][][] []
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.87 \begin{eqnarray}
+                     
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 87--87
+[] 
+ []
+
+
+Overfull \hbox (205.15268pt too wide) in alignment at lines 87--91
+ [][][] []
+ []
+
+Missing character: There is no 令 in font nullfont!
+Missing character: There is no 上 in font nullfont!
+Missing character: There is no 式 in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ， in font nullfont!
+Missing character: There is no 有 in font nullfont!
+
+Overfull \hbox (63.37463pt too wide) in alignment at lines 93--95
+ [][][] []
+ []
+
+
+Overfull \hbox (81.88858pt too wide) in alignment at lines 96--98
+ [][][] []
+ []
+
+)
+! Emergency stop.
+<*> file.tex
+            
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 18 strings out of 493591
+ 167 string characters out of 6143546
+ 64754 words of memory out of 5000000
+ 3525 multiletter control sequences out of 15000+600000
+ 4567 words of font info for 17 fonts, out of 8000000 for 9000
+ 1347 hyphenation exceptions out of 8191
+ 19i,14n,16p,139b,124s stack positions out of 5000i,500n,10000p,200000b,80000s
+No pages of output.

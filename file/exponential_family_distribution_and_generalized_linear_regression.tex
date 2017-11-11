@@ -1,0 +1,108 @@
+\section{指数函数族与广义线性模型}
+参数为$\eta$的变量$x$的指数族分布定义为
+\begin{eqnarray}
+p(x|\eta)=h(x)g(\eta)e^{\eta^Tu(x)}
+\end{eqnarray}
+其中，$x$可为标量或向量，离散或连续的。
+\subsection{伯努利分布导出logistic回归}
+考虑伯努利分布，其为二元变量的取值分步。可通过该分布导出logistic函数。伯努利分布及其指数式变形如下
+\begin{eqnarray}
+\begin{aligned}
+p(x|\eta)&=\textbf{Bern}(x|\eta)\\
+&=\mu^x(1-\mu)^{1-x}\\
+&=e^{x\ln\mu+(1-x)\ln(1-\mu)}\\
+&=(1-\mu)e^{\ln(\frac{\mu}{1-\mu})x}
+\end{aligned}
+\end{eqnarray}
+令$h(x)=1$，$g(\eta)=1-\eta$，$\eta^T=\ln(\frac{\mu}{1-\mu})$，$u(x)=x$，因而有
+\begin{eqnarray}
+\mu=\ln(\frac{\mu}{1-\mu})
+\end{eqnarray}
+其反函数为
+\begin{eqnarray}
+\sigma(\eta)=\frac{1}{1+e^{-\eta}}
+\end{eqnarray}
+因而，logistic回归的形式为
+\begin{eqnarray}
+y=\sigma(\theta^Tx)
+\end{eqnarray}
+\subsection{多项式分布导出softmax回归}
+考虑多项式分布，其有$M$个可能取值，$\mu_i$为当$x=i$时的概率，因而有
+\begin{eqnarray}
+\sum_{k=1}^M=1
+\end{eqnarray}
+定义指示函数
+\begin{eqnarray}
+I=
+\left\lbrace
+\begin{aligned}
+1,\textbf{True}\\
+0,\textbf{False}
+\end{aligned}
+\right.
+\end{eqnarray}
+则多项式分布可表示为
+\begin{eqnarray}
+\begin{aligned}
+p(x|\mu) &= \prod_{k=1}^M\mu_k^{I(x_k=1)}\\
+&= \exp
+	\left\lbrace
+	\begin{aligned}
+	{\sum_{k=1}^Mx_k\ln\mu_k}\\
+	\end{aligned}
+	\right\rbrace\\
+&= \exp
+	\left\lbrace
+	\begin{aligned}
+	{\sum_{k=1}^{M-1}x_k\ln\mu_k+(1-\sum_{k=1}^{M-1}x_k)\ln(1-\sum_{k=1}^{M-1}\mu_k)}
+	\end{aligned}
+	\right\rbrace\\
+&= \exp
+	\left\lbrace
+	\begin{aligned}
+	{\sum_{k=1}^{M-1}x_k\ln(\frac{\mu_k}{1-\sum_{j=1}^{M-1}})+\ln(1-\sum_{k=1}^{M-1}\mu_k)
+	\end{aligned}
+	\right\rbrace
+\end{aligned}
+\end{eqnarray}
+其为指数族函数，其中
+\begin{eqnarray}
+\begin{aligned}
+h(x)&=1\\
+g(\eta)&=1-\sum_{k=1}^{M-1}\mu_k\\
+\eta &= 
+\begin{pmatrix}
+\frac{\mu_1}{1-\sum_{j=1}^{M-1}}\\
+\frac{\mu_2}{1-\sum_{j=1}^{M-1}}\\
+\vdots\\
+\frac{\mu_{M-1}}{1-\sum_{j=1}^{M-1}}
+\end{pmatrix}\\
+u(x)&=x
+\end{aligned}
+\end{eqnarray}
+令
+\begin{eqnarray}
+\ln
+\left(
+\begin{aligned}
+\frac{\mu_k}{1-\sum_j\mu_j}
+\end{aligned}
+\right)
+=\eta_k
+\end{eqnarray}
+求其反函数，有
+\begin{eqnarray}
+\mu_k=\frac{\exp(\eta_k)}{1+\sum_j^{M-1}\exp(\eta_j)}
+\end{eqnarray}
+该函数为logistic函数在多元情况下的拓展，称为softmax函数或归一化指数。采用广义线性模型的想法，有
+\begin{eqnarray}
+p(C_K|x)=y_k=\frac{e^{\theta_k^Tx}}{\sum_je^{\theta_k^Tx}}
+\end{eqnarray}
+对于第$n$个样本，有
+\begin{eqnarray}
+\prod_{k=1}^Kp(C_K|x_n)^{I(x_k=1)}=y_k^{I(x_k=1)}
+\end{eqnarray}
+所以其似然函数为
+\begin{eqnarray}
+L(\theta)= \prod_{n=1}^N\prod_{k=1}^Kp(C_K|x_n)^{I(x_{nk}=1)}=\prod_{n=1}^N\prod_{k=1}^Ky_{nk}^{I(x_{nk}=1)}
+\end{eqnarray}

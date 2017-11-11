@@ -1,0 +1,97 @@
+\documentclass{thesis/PatternRecognition}
+\usepackage{thesis/scnu}
+\usepackage{thesis/mynewcommand}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{booktabs}
+
+
+\graphicspath {{figures/}}%The folder containing pictures
+\captionsetup{font={footnotesize}}
+\definecolor{darkgreen}{rgb}{0,0.6,0}
+\definecolor{underground}{rgb}{0.949,0.949,0.949}
+\definecolor{strcolor}{rgb}{0.8,0,0.8}
+\colorlet{stringcolour}{red!60!black}
+\colorlet{keywordcolour}{magenta!90!black}
+\colorlet{exceptioncolour}{yellow}
+\colorlet{commandcolour}{blue!60!black}
+\colorlet{numpycolour}{blue!60!green}
+\colorlet{literatecolour}{magenta!90!black}
+\colorlet{promptcolour}{green!50!black}
+\colorlet{specmethodcolour}{violet}
+\colorlet{commentcolour}{green!50!black}
+
+
+
+
+\begin{document}
+
+\lstset
+{
+language=python,
+numbers=left,
+numberstyle=\color{blue}, 						%代码编号
+%stepnumber=0,									%代码编号步长
+keywordstyle=\color{keywordcolour}\bfseries,			%关键字颜色
+commentstyle=\color{commentcolour},					%注释颜色
+%frame=shadowbox,								%边框
+breaklines=true, 								%自动折行
+stringstyle=\color{stringcolour},				%字符串颜色
+backgroundcolor=\color{underground},			%背景色
+xleftmargin=0cm,xrightmargin=0cm, aboveskip=1cm, %设置边距
+basicstyle=\small,								%基本字体字号  
+rulesepcolor=\color{red!20!green!20!blue!20},
+flexiblecolumns=true, 
+breakautoindent=true,
+%python特有关键字
+emph={and,break,class,continue,def,yield,del,elif ,else,%
+except,exec,finally,for,from,global,if,import,in,%
+lambda,not,or,pass,print,raise,return,try,while,assert,with},
+emphstyle=\color{blue}\bfseries,
+emph={[2]True, False, None},
+emphstyle=[2]\color{keywordcolour},
+emph={[3]object,type,isinstance,copy,deepcopy,zip,enumerate,reversed,list,len,dict,tuple,xrange,append,execfile,real,imag,reduce,str,repr},
+emphstyle=[3]\color{commandcolour},
+emph={Exception,NameError,IndexError,SyntaxError,TypeError,FileNotFoundError,ValueError,OverflowError,ZeroDivisionError},
+emphstyle=\color{exceptioncolour}\bfseries ,
+emph={[4]ode, fsolve, sqrt, exp, sin, cos,arctan, arctan2, arccos, pi,  array, norm, solve, dot, arange, , isscalar, max, sum, flatten, shape, reshape, find, any, all, abs, plot, linspace, legend, quad, polyval,polyfit, hstack, concatenate,vstack,column_stack,empty,zeros,ones,rand,vander,grid,pcolor,eig,eigs,eigvals,svd,qr,tan,det,logspace,roll,min,mean,cumsum,cumprod,diff,vectorize,lstsq,cla,eye,xlabel,ylabel,squeeze},
+emphstyle=[4]\color{numpycolour},
+emph={[7]range},
+emphstyle={[7]\color{keywordcolour}\bfseries},
+emph={[8]1, 2, 3, 4, 5, 6, 7, 8, 9, 0},
+emphstyle={[8]\color{keywordcolour}\bfseries},
+}
+
+
+
+\ctitle{newcommand guide}
+\tableofcontents       %输出目录
+
+sample\{x\}\{i\}
+\begin{eqnarray}
+\sample{x}{i}
+\end{eqnarray}
+
+samplet\{x\}\{i\}\{k\}
+\begin{eqnarray}
+\samplet{x}{i}{k}
+\end{eqnarray}
+
+vectornew\{x\}\{n\}
+\begin{eqnarray}
+\vectornew{x}{n}
+\end{eqnarray}
+
+vvectornew\{x\}\{n\}
+\begin{eqnarray}
+\vvectornew{x}{n}
+\end{eqnarray}
+
+matrixthird\{K\}\{n\}\{m\}
+\begin{eqnarray}
+\matrixthird{K}{n}{m}
+\end{eqnarray}
+
+\end{document}

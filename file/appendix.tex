@@ -1,0 +1,36 @@
+\section{附录}
+\subsection{SVD分解}
+假设$A$是一个$m\times n$的矩阵，可以分解为如下形式
+\begin{eqnarray}
+A = U\Sigma V^T
+\end{eqnarray}
+其中，$V$为$n\times n$的矩阵，如下定义
+\begin{eqnarray}
+(A^TA)v_i=\lambda_iv_i
+\end{eqnarray}
+$\lambda_i$为$A^TA$的特征值，$v_i$为$A^TA$的特征向量（为列向量）。$\Sigma$为$m\times n$的对角矩阵，对角元素为如下定义
+\begin{eqnarray}
+\Sigma_{ii}=\sqrt{\lambda_i}
+\end{eqnarray}
+$U$为$m\times m$的矩阵，定义为
+\begin{eqnarray}
+u_i=\frac{1}{\Sigma_{ii}}Av_i
+\end{eqnarray}
+
+上述$\sigma_i=\Sigma_{ii}$为奇异值，$u$为左奇异向量，奇异值在$\Sigma$中排列为从大到小，因此$\sigma$会减小地很快。多数情况下$10\%$甚至$1\%$的奇异值的和已经占了全部奇异值的和的$99\%$以上，因而可以选择前$r$个奇异值来近似地描述矩阵，定义\textbf{部分奇异值分解}：
+\begin{eqnarray}
+A_{m\times n}\approx U_{m\times r}\Sigma_{r\times r}V^T_{r\times n}
+\end{eqnarray}
+其中，$r$是一个远小于$m,n$的数。对于很大的矩阵$A$，储存将会耗费很大的空间，反而储存$U,S,V$是一个很好的选择。
+
+\subsection{范数}
+\subsubsection{常用向量范数}
+对于$x=\vectornew{x}{n}^T$，则
+\paragraph{p-范数}$||x||_p = (\sum_i^n |x_i|^p)^{\frac{1}{p}}$
+\paragraph{1-范数}$||x||_1 = \sum_i^n |x_i|$
+\paragraph{2-范数}$||x||_2 = (\sum_i^n |x_i}^2)^{\frac{1}{2}}$
+\paragraph{$\infty$-范数}$||x||_p = \max\{|x_1|,\cdots,|x_n|\}$
+\subsubsection{常用矩阵范数}
+\paragraph{p-范数}$||A||_1=\max\{\sum|a_{i1}|,\sum|a_{i2}|,\cdots,\sum|a_{in}|\}$（列和范数，$A$每一列元素绝对值之和的最大值），其中$\sum|a_{i1}|$每一列元素绝对值的和$\sum|a_{i1}|=|a_{11}|+|a_{21}|+\cdots+|a_{n1}|$。
+\paragraph{2-范数}$||A||_2=A$的最大奇异值$=(\max\{ \lambda_i(A^H*A) \})^\frac{1}{2}$（谱范数，即$A^H*A$特征值$\lambda_i$的平方根，其中$A^H$为$A$的共轭转置矩阵）
+\paragraph{$\infty$-范数}$||A||_\infty=\max\{\sum|a_{1j}|,\sum|a_{2j}|,\cdots,\sum|a_{mj}|\}$（行和范数，$A$每一行元素绝对值之和的最大值），其中$\sum|a_{1j}|$每一列元素绝对值的和$\sum|a_{1j}|=|a_{11}|+|a_{12}|+\cdots+|a_{1m}|$
