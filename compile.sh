@@ -1,8 +1,8 @@
 #!/bin/bash
 
-xelatex -shell-escape CS229.tex
-bibtex CS229.aux
-xelatex -shell-escape CS229.tex
-xelatex -shell-escape CS229.tex
+xelatex -shell-escape ML_note.tex
+bibtex ML_note.aux
+xelatex -shell-escape ML_note.tex
+xelatex -shell-escape ML_note.tex
 rm *.aux *.log *.bbl *.blg *.toc
-evince CS229.pdf
+evince ML_note.pdf
