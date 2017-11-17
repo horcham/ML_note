@@ -37,17 +37,32 @@ OvR只需要训练$N$个分类器，而OvO需要训练$\frac{N(N-1)}{2}$个分�
 此时则需要对训练集进行调整。
 \subsubsection{欠采样(undersampling)}
 欠采样法若随机丢弃反例，则可能丢失一些重要的信息，常用的有EasyEnsemble算法。
-\paragraph{EasyEnsemble算法}则是利用集成学习的机制，将多数类划分为若干个集合，使得这些多数类的子集中元素个数与少数类样本数量基本相同，供给不同学习器使用，最后将这些学习器集成起来。这样对每个学习器来看都进行了欠采样，但从全局来看，却不会丢失重要的信息。记多数类的样本集合为$L$，少数类样本集合为$S$，$N$为将多数类拆分成$N$个子集来训练$N$个分类器，算法如下
+\paragraph{EasyEnsemble算法}则是利用集成学习的机制，将多数类划分为若干个集合，使得这些多数类的子集中元素个数与少数类样本数量基本相同，供给不同学习器使用，最后将这些学习器集成起来。这样对每个学习器来看都进行了欠采样，但从全局来看，却不会丢失重要的信息。记多数类的样本集合为$\mathcal{N}$，少数类样本集合为$\mathcal{S}$，$T$为将多数类拆分成$T$个子集来训练$T$个分类器，算法如下
 \begin{lstlisting}[language=python]
-For i=1,`$\cdots$`,N
-   (1) `随机从$L$中抽出样本构成多数类子集$L_1$，使得$|L_i|=|S|$`
-   (2) `使用$L_i$和$S$的数据集，训练AdaBoost分类器$F_i$，其中$f_{ij}(x)$为弱分类器`
-       `$$F_i(x)=sgn(\sum_{j=1}^n w_{ij}f_{ij}(x)-b_i)$$`
-`将上述分类器联合起来`
-`$$F(x)=sgn(\sum_{i=1}^N F_i(x))$$`
+For i=1,`$\cdots$`,T
+    `(1) 随机从$\mathcal{N}$中抽出样本构成多数类子集$\mathcal{N}_i$，使得$|\mathcal{N}_i|=|\mathcal{S}|$`
+    `(2) 使用$\mathcal{N}_i$和$\mathcal{S}$的数据集，训练AdaBoost分类器$H_i$，其中$h_{ij}(x)$为弱分类器，训练$s_i$次,得到对应的权重$\alpha_{ij}$和阈值$\theta_i$，
+       $$H_i(x)=sgn(\sum_{j=1}^s_i \alpha_{ij}h_{ij}(x)-\theta_i)$$`
+`将上述分类器联合起来，
+$$F(x)=sgn(\sum_{i=1}^T H_i(x))$$`
 \end{lstlisting}
 
-\paragraph{balance cascade}
+\paragraph{BalanceCascade算法}
+少数类样本$\mathcal{P}$，多数类样本$\mathcal{N}$，$|\mathcal{P}|<|\mathcal{N}|$，$T$为将多数类拆分成$T$个子集来训练$T$个分类器。定义
+\begin{eqnarray}
+f = \left( \frac{|\mathcal{P}|}{\mathcal{|N|}} \right)^{T-1}
+\end{eqnarray}
+$f$定义为假正率（将多数类误分为少数类的错误率）。这是分类器$H_i$将达到的假真率。算法如下
+\begin{lstlisting}[language=python]
+For i=1,`$\cdots$`,T
+    `(1) 随机从$\mathcal{N}$中抽出样本构成多数类子集$\mathcal{N}_i$，使得$|\mathcal{N}_i|=|\mathcal{S}|$`
+    `(2) 使用$\mathcal{N}_i$和$\mathcal{S}$的数据集，训练AdaBoost分类器$H_i$，其中$h_{ij}(x)$为弱分类器，训练$s_i$次，得到对应的权重$\alpha_{ij}$和阈值$\theta_i$，
+       $$H_i(x)=sgn(\sum_{j=1}^s_i \alpha_{ij}h_{ij}(x)-\theta_i)$$`
+    `(3) 调整阈值$\theta_i$，使$H_i$达到假正率$f$`
+    `(4) 去掉$\mathcal{N}$中被$H_i$正确分类的样例`
+`将上述分类器联合起来，
+$$H(x)=sgn(\sum_{i=1}^T H_i(x))$$`
+\end{lstlisting}
 
 \subsubsection{过采样(oversampling)}
 若过采样法简单地对初始样本进行重复采样，很容易引起过拟合。一种方法是SMOTE算法，通过对训练集里的样本进行插值来产生额外的正例。
