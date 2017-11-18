@@ -1,0 +1,75 @@
+\section{决策树}
+决策树学习，假设给定训练数据集
+\begin{eqnarray}
+D=\{ (\sample{x}{1},\sample{y}{1}),(\sample{x}{2},\sample{y}{2}),\cdots,(\sample{x}{N},\sample{y}{N}) \}
+\end{eqnarray}
+其中，$\sample{x}{i}=(\samplet{x}{i}{1},\samplet{x}{i}{2},\cdots,\samplet{x}{i}{n})$，$n$为特征个数，$\sample{y}{i}\in\{ 1,2,\cdots,K \}$，$K$为类别数目，$i=1,2,\cdots,N$，$N$为样本容量。
+\subsection{特征选择}
+\subsubsection{信息增益}
+设$X$是一个取有限个值的离散随机变量，其概率分布为
+\begin{eqnarray}
+P(X=\sample{x}{i})=p_i,i=1,2,\cdots,n
+\end{eqnarray}
+则随机变量$X$的熵定义为
+\begin{eqnarray}
+H(X)=-\sum_{i=1}^n p_i\log p_i
+\end{eqnarray}
+熵越大，随机变量的不确定性就越大。
+
+设有随机变量$(X,Y)$，其联合概率分布为
+\begin{eqnarray}
+P(X=\sample{x}{i},Y=\sample{y}{i})=p_{ij}，i,2,\cdots,n;j=1,2,\cdots,m
+\end{eqnarray}
+条件熵$H(Y|X)$为已知随机变量$X$的条件下随机变量$Y$的不确定性，随机变量$X$给定的条件下随机变量$Y$的条件熵$H(Y|X)$定义如下
+\begin{eqnarray}
+H(Y|X)=\sum_{i=1}^np_iH(Y|X=x_i)
+\end{eqnarray}
+其中，$p_i=P(X=x_i),i=1,2,\cdots,n$。
+
+信息增益（information gain）表示得知特征$X$的信息，是的类$Y$的信息的不确定性减少的程度，定义如下
+\paragraph{信息增益}特征$A$对训练数据集$D$的信息增益$g(D,A)$，定义为集合$D$的经验熵$H(D)$与特征$A$给定条件下$D$的经验条件熵$H(D|A)$之差，即
+\begin{eqnarray}
+g(D,A)=H(D)-H(D|A)
+\end{eqnarray}
+
+设训练数据为$D$，$|D|$表示其样本容量，即样本个数，设有$K$个类$C_k$，$k=1,2,\cdots,K$，$|C_k|$为属于类$C_k$的样本个数，$\sum_{k=1}^K|C_k|=|D|$。设特征$A$有$n$个不同的取值$\{ a_1,a_2,\cdots,a_n \}$，根据特征$A$的取值将$D$划分为$n$个子集$D_1,D_2,\cdots,D_n$，$|D_1|$为$D_i$的样本个数，$\sum_{i=1}^n|D_i|=|D|$。记子集$D_i$中属于类$C_k$的样本的集合为$D_{ik}$，即$D_{ik}=D_i\cap C_k$，$|D_{ik}|$为$D_{ik}$的样本个数，信息增益算法如下
+\begin{itemize}
+\item 输入：训练数据集$D$和特征$A$；
+\item 输出：特征$A$对训练数据集$D$的信息增益$g(D,A)$
+\item[1] 计算数据集$D$的经验熵$H(D)$
+\begin{eqnarray}
+H(D)=-\sum_{k=1}^K \frac{|C_k|}{|D|}\log_2\frac{|C_k|}{|D|}
+\end{eqnarray}
+\item[2] 计算特征$A$对数据集$D$的经验条件熵$H(D|A)$
+\begin{eqnarray}
+H(D|A)=\sum_{i=1}^n\frac{|D_i|}{|D|}H(D_i)=-\sum_{i=1}^n\frac{|D_i|}{|D|}\sum_{k=1}^K\frac{|D_{ik}|}{|D_i|}\log_2\frac{|D_{ik}|}{|D_i|}
+\end{eqnarray}
+\item[3] 计算信息增益
+\begin{eqnarray}
+g(D,A)=H(D)-H(D|A)
+\end{eqnarray}
+\end{itemize}
+
+\subsubsection{信息增益比}
+\paragraph{信息增益比}特征$A$对训练数据集$D$的信息增益比$g_R(D,A)$定义为其信息增益$g(D,A)$与训练数据集$D$关于特征$A$的值的熵$H_A(D)$之比，即
+\begin{eqnarray}
+g_R(D,A)=\frac{g(D,A)}{H_A(D)}
+\end{eqnarray}
+其中，$H_A(D)=-\sum_{i=1}^n \frac{|D_i|}{|D|}\log_2\frac{|D_i|}{|D|}$，$n$是特征$A$取值的个数。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
