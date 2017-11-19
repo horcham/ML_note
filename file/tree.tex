@@ -32,40 +32,70 @@ H(Y|X)=\sum_{i=1}^np_iH(Y|X=x_i)
 g(D,A)=H(D)-H(D|A)
 \end{eqnarray}
 
-设训练数据为$D$，$|D|$表示其样本容量，即样本个数，设有$K$个类$C_k$，$k=1,2,\cdots,K$，$|C_k|$为属于类$C_k$的样本个数，$\sum_{k=1}^K|C_k|=|D|$。设特征$A$有$n$个不同的取值$\{ a_1,a_2,\cdots,a_n \}$，根据特征$A$的取值将$D$划分为$n$个子集$D_1,D_2,\cdots,D_n$，$|D_1|$为$D_i$的样本个数，$\sum_{i=1}^n|D_i|=|D|$。记子集$D_i$中属于类$C_k$的样本的集合为$D_{ik}$，即$D_{ik}=D_i\cap C_k$，$|D_{ik}|$为$D_{ik}$的样本个数，信息增益算法如下
+根据信息增益准则的特征选择方法是：对训练数据集（或子集）$D$，计算其每个特征的信息增益，并比较它们的大小，选择信息增益最大的特征。
+
+设训练数据为$D$，$|D|$表示其样本容量，即样本个数，设有$K$个类$C_k$，$k=1,2,\cdots,K$，$|C_k|$为属于类$C_k$的样本个数，$\sum_{k=1}^K|C_k|=|D|$。设特征$A$有$n$个不同的取值$\{ a_1,a_2,\cdots,a_n \}$，记特征集为$A$，根据某一特征$a$的取值将$D$划分为$n$个子集$D_1,D_2,\cdots,D_n$，$|D_i|$为$D_i$的样本个数，$\sum_{i=1}^n|D_i|=|D|$。记子集$D_i$中属于类$C_k$的样本的集合为$D_{ik}$，即$D_{ik}=D_i\cap C_k$，$|D_{ik}|$为$D_{ik}$的样本个数，信息增益算法如下
 \begin{itemize}
-\item 输入：训练数据集$D$和特征$A$；
-\item 输出：特征$A$对训练数据集$D$的信息增益$g(D,A)$
+\item 输入：训练数据集$D$和特征$a$；
+\item 输出：特征$a$对训练数据集$D$的信息增益$g(D,a)$
 \item[1] 计算数据集$D$的经验熵$H(D)$
 \begin{eqnarray}
 H(D)=-\sum_{k=1}^K \frac{|C_k|}{|D|}\log_2\frac{|C_k|}{|D|}
 \end{eqnarray}
-\item[2] 计算特征$A$对数据集$D$的经验条件熵$H(D|A)$
+\item[2] 计算特征$a$对数据集$D$的经验条件熵$H(D|a)$
 \begin{eqnarray}
-H(D|A)=\sum_{i=1}^n\frac{|D_i|}{|D|}H(D_i)=-\sum_{i=1}^n\frac{|D_i|}{|D|}\sum_{k=1}^K\frac{|D_{ik}|}{|D_i|}\log_2\frac{|D_{ik}|}{|D_i|}
+\begin{aligned}
+H(D|a)&=\sum_{i=1}^n \frac{|D_i|}{|D|}H(D|a=a_i)\\
+&=\sum_{i=1}^n\frac{|D_i|}{|D|}H(D_i)\\
+&=-\sum_{i=1}^n\frac{|D_i|}{|D|}\sum_{k=1}^K\frac{|D_{ik}|}{|D_i|}\log_2\frac{|D_{ik}|}{|D_i|}
+\end{aligned}
 \end{eqnarray}
 \item[3] 计算信息增益
 \begin{eqnarray}
-g(D,A)=H(D)-H(D|A)
+g(D,A)=H(D)-H(D|a)
 \end{eqnarray}
 \end{itemize}
 
-\subsubsection{信息增益比}
-\paragraph{信息增益比}特征$A$对训练数据集$D$的信息增益比$g_R(D,A)$定义为其信息增益$g(D,A)$与训练数据集$D$关于特征$A$的值的熵$H_A(D)$之比，即
+于是，在候选属性集合$A$中，选择使得划分后信息增益最大的属性作为最优划分属性，即
 \begin{eqnarray}
-g_R(D,A)=\frac{g(D,A)}{H_A(D)}
+a_*=\arg\max_{a\in A}g(D,a)
 \end{eqnarray}
-其中，$H_A(D)=-\sum_{i=1}^n \frac{|D_i|}{|D|}\log_2\frac{|D_i|}{|D|}$，$n$是特征$A$取值的个数。
 
+该算法天生偏向选择分支多的属性，容易导致过拟合。
 
+\subsubsection{信息增益比}
+\paragraph{信息增益比}特征$a$对训练数据集$D$的信息增益比$g_R(D,a)$定义为其信息增益$g(D,a)$与训练数据集$D$关于特征$a$的值的熵$H_a(D)$之比，即
+\begin{eqnarray}
+g_R(D,a)=\frac{g(D,a)}{H_a(D)}
+\end{eqnarray}
+其中，$H_a(D)=-\sum_{i=1}^n \frac{|D_i|}{|D|}\log_2\frac{|D_i|}{|D|}$，$n$是特征$a$取值的个数。
 
+于是，在候选属性集合$A$中，选择使得划分后信息增益最大比的属性作为最优划分属性，即
+\begin{eqnarray}
+a_*=\arg\max_{a\in A}g_R(D,a)
+\end{eqnarray}
 
+\subsubsection{基尼指数}
+分类问题中，假设有$K$个类，样本点属于第$k$类的概率为$p_k$，则概率分布的基尼指数定义为
+\begin{eqnarray}
+Gini(p)=\sum_{k=1}^K p_k(1-p_k)=1-\sum_{k=1}^K p_k^2
+\end{eqnarray}
+对于样本集合$D$，$D$的纯度可以用Gini指数来度量
+\begin{eqnarray}
+Gini(D)=1-\sum_{k=1}^K \left( \frac{|C_k|}{|D|} \right)^2
+\end{eqnarray}
+其中，$C_k$是$D$中属于第$k$类的样本子集，$K$是类的个数。直观上，$Gini(D)$反映了$D$中随机抽取两个样本，其类别标记不一致的概率。因此，$Gini(D)$越小，则数据集$D$的纯度越高。
 
+设特征$a$有$n$个不同的取值$\{ a_1,a_2,\cdots,a_n \}$，根据特征$a$的取值将$D$划分为$n$个子集$D_1,D_2,\cdots,D_n$，$|D_i|$为$D_i$的样本个数，$\sum_{i=1}^n|D_i|=|D|$，则属性$a$的Gini指数定义为
+\begin{eqnarray}
+Gini(D,a)=\sum_{i=1}^n \frac{|D_i|}{|D|}Gini(D_i)
+\end{eqnarray}
+性$a$的Gini指数$Gini(D,a)$表示经$a$分后集合$D$的不确定性，则$Gini$指数值越大，样本集合的不确定性就越大。
 
-
-
-
-
+于是，在候选属性集合$A$中，选择使得划分后$Gini$指数最小的属性作为最优划分属性，即
+\begin{eqnarray}
+a_*=\arg\min_{a\in A}Gini(D,a)
+\end{eqnarray}
 
 
 
