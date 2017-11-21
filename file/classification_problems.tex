@@ -42,7 +42,7 @@ OvR只需要训练$N$个分类器，而OvO需要训练$\frac{N(N-1)}{2}$个分�
 For i=1,`$\cdots$`,T
     `(1) 随机从$\mathcal{N}$中抽出样本构成多数类子集$\mathcal{N}_i$，使得$|\mathcal{N}_i|=|\mathcal{S}|$`
     `(2) 使用$\mathcal{N}_i$和$\mathcal{S}$的数据集，训练AdaBoost分类器$H_i$，其中$h_{ij}(x)$为弱分类器，训练$s_i$次,得到对应的权重$\alpha_{ij}$和阈值$\theta_i$，
-       $$H_i(x)=sgn(\sum_{j=1}^s_i \alpha_{ij}h_{ij}(x)-\theta_i)$$`
+       $$H_i(x)=sgn(\sum_{j=1}^{s_i} \alpha_{ij}h_{ij}(x)-\theta_i)$$`
 `将上述分类器联合起来，
 $$F(x)=sgn(\sum_{i=1}^T H_i(x))$$`
 \end{lstlisting}
@@ -57,7 +57,7 @@ $f$定义为假正率（将多数类误分为少数类的错误率）。这是�
 For i=1,`$\cdots$`,T
     `(1) 随机从$\mathcal{N}$中抽出样本构成多数类子集$\mathcal{N}_i$，使得$|\mathcal{N}_i|=|\mathcal{S}|$`
     `(2) 使用$\mathcal{N}_i$和$\mathcal{S}$的数据集，训练AdaBoost分类器$H_i$，其中$h_{ij}(x)$为弱分类器，训练$s_i$次，得到对应的权重$\alpha_{ij}$和阈值$\theta_i$，
-       $$H_i(x)=sgn(\sum_{j=1}^s_i \alpha_{ij}h_{ij}(x)-\theta_i)$$`
+       $$H_i(x)=sgn(\sum_{j=1}^{s_i} \alpha_{ij}h_{ij}(x)-\theta_i)$$`
     `(3) 调整阈值$\theta_i$，使$H_i$达到假正率$f$`
     `(4) 去掉$\mathcal{N}$中被$H_i$正确分类的样例`
 `将上述分类器联合起来，

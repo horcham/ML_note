@@ -213,7 +213,8 @@ p(\theta|S)&=\frac{p(S|\theta) p(\theta)}{p(S)}\\
 &= \frac{(\prod_{i=1}^mp(\sample{y}{i}|\sample{x}{i},\theta))p(\theta)}{\int_\theta (\prod_{i=1}^mp(\sample{y}{i}|\sample{x}{i},\theta)p(\theta))d\theta }
 \end{aligned}
 \end{eqnarray}
-在上面的等式中，$p(\sample{y}{i}|\sample{x}{i},\theta)$来自所使用的模型。例如，若使用贝叶斯逻辑斯蒂回归，当$h_\theta(\sample{x}{i})=\frac{1}{1+e^{-\theta^T\sample{x}{i}}}$则会选择$p(\sample{y}{i}|\sample{x}{i},\theta)=h_\theta(\sample{x}{i})^\sample{y}{i}(1-h_\theta(\sample{x}{i}))^{1-\sample{y}{i}}$
+在上面的等式中，$p(\sample{y}{i}|\sample{x}{i},\theta)$来自所使用的模型。例如，若使用贝叶斯逻辑斯蒂回归，当$h_\theta(\sample{x}{i})=\frac{1}{1+e^{-\theta^T\sample{x}{i}}}$
+则会选择$p(\sample{y}{i}|\sample{x}{i},\theta)=h_{\theta}(\sample{x}{i})^{\sample{y}{i}}(1-h_\theta (\sample{x}{i}))^{1-\sample{y}{i}}$
 
 对于一个新的测试样例$x$，我们将用它做预测，我们可以基于在$\theta$的后延分布来计算在训练标签上的后验分布
 \begin{eqnarray}

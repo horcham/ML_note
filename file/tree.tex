@@ -98,7 +98,7 @@ a_*=\arg\min_{a\in A}Gini(D,a)
 \end{eqnarray}
 
 \subsection{决策树的生成}
-\subsubsection{ID3算法}
+\subsubsection{ID3}
 从根节点开始，对结点计算所有可能的特征的信息增益，选择信息增益最大的特征作为节点的特征，由该特征的不同区直建立子节点，再递归地使用以上方法，构造决策树，直到所有特征的信息增益均最小或没有特征可以选择为止，最后得到一个决策树
 \paragraph{ID3算法}
 \begin{itemize}
@@ -112,9 +112,10 @@ a_*=\arg\min_{a\in A}Gini(D,a)
 \item[6] 对第$i$个子结点，以$D_i$为训练集，以$A-\{A_g\}$为特征集，递归地调用$1\sim 5$，得到子树$T_i$，返回$T_i$
 \end{itemize}
 
-\subsubsection{C4.5算法}
+\subsubsection{C4.5}
 C4.5采用信息增益比来选择特征
 \paragraph{C4.5算法}
+\begin{itemize}
 \item 输入：训练数据集$D$，特征集$A$，阈值$\epsilon$
 \item 输出：决策树$T$
 \item[1] 若$D$中所有实例属于同一类$C_k$，则$T$为单节点树，并将类$C_k$作为该结点的类标记，返回$T$
@@ -125,7 +126,67 @@ C4.5采用信息增益比来选择特征
 \item[6] 对第$i$个子结点，以$D_i$为训练集，以$A-\{A_g\}$为特征集，递归地调用$1\sim 5$，得到子树$T_i$，返回$T_i$
 \end{itemize}
 
+\subsubsection{CART}
+对回归树用平方误差最小化准则，对分类树用Gini指数最小化准则，进行特征选择，生成二叉树。
+
+1. 回归树的生成
+
+假设$X$和$Y$分别为输入和输出变量，并且$Y$是连续变量，给定训练数据集$ D=\{ (\sample{x}{1},\sample{y}{1}),(\sample{x}{2},\sample{y}{2}),\cdots,(\sample{x}{N},\sample{y}{N}) \} $。回归树将输入空间划分为$M$个单元$D_1,D_2,\cdots,D_M$，且在每个单元上有一个固定值$c_m$，因此回归树模型表示为
+\begin{eqnarray}
+f(x)=\sum_{m=1}^M c_m1(x\in D_m)
+\end{eqnarray}
+其中，$1(x)$为示性函数。具体的，为求解
+\begin{eqnarray}
+\min_{j,s}
+\left(
+	\min_{c_1}\sum_{x_i\in D_1(j,s)}(y_i-c_1)^2+\min_{c_2}\sum_{x_i\in D_2(j,s)}(y_i-c_2)^2
+\right)
+\end{eqnarray}
+其中，$j$为最优划分变量，$s$为最优划分点。$D_1(j,s)=\{x|x_j\leq s\}$，$D_2(j,s)=\{x|x_j> s\}$。对于$j$和$s$的选取，采用遍历的方法。遍历划分变量$j$，再以步长$\Delta s$扫描划分点$s$。对于$j$，$s$都固定，且用平方误差$\sum_{x_i\in D_m}(\sample{y}{i}-f(\sample{x}{i}))^2$来表示回归树对于训练数据的预测误差，则可求得在单元$D_m$上的$c_m$的最优值$\hat{c_m}$为
+\begin{eqnarray}
+\hat{c_m}=\frac{1}{N_m}\sum_{x_i\in D_m(j,s)}y_i,\ m=1,2
+\end{eqnarray}
+其中，$N_m$为单元$D_m$中的样本个数。其表示对$D_m$的所有样本的$y$取均值。
+
+经过两轮遍历之后，即可选出最优划分变量和最优划分点，以及计算出对应的$\hat{c_m}$。算法如下
+
+\paragraph{最小二乘回归树生成算法}
+\begin{itemize}
+\item 输入：训练数据集$D$，特征集$A$，阈值$\epsilon$
+\item 输出：回归树$f(x)$
+\item[1] 若$D$中所有实例的输出均为$y_0$，则$T$为单节点树，并将$y_0$作为该结点的输出值，返回$T$
+\item[2] 否则，采用遍历的方法。遍历划分变量$j$，对于固定的划分变量$j$再以步长$\Delta s$扫描划分点$s$，对于$j$，$s$都固定，求$c_1$，$c_2$
+\begin{eqnarray}
+c_m=\frac{1}{N_m}\sum_{x_i\in D_m(j,s)}y_i,\ m=1,2
+\end{eqnarray}
+来求解
+\begin{eqnarray}
+\min_{j,s}
+\left(
+	\min_{c_1}\sum_{x_i\in D_1(j,s)}(y_i-c_1)^2+\min_{c_2}\sum_{x_i\in D_2(j,s)}(y_i-c_2)^2
+\right)
+\end{eqnarray}
+并记损失函数
+\begin{eqnarray}
+L=\sum_{x_i\in D_1(j,s)}(y_i-c_1)^2+\sum_{x_i\in D_2(j,s)}(y_i-c_2)^2
+\end{eqnarray}
+\item[3] 如果$L$小于阈值$\epsilon$，则置$T$为单结点树，并将$D$中实例的输出的均值$\hat{c}=\frac{1}{N_{|D|}}\sum_{x_i\in D}y_i$作为该结点的输出值，返回$T$
+\item[4] 否则，用选定的对$(j,s)$划分区域，并决定相应的输出值
+\begin{eqnarray}
+D_1(j,s)&=&\{x|x_j\leq s\}\\
+D_2(j,s)&=&\{x|x_j> s\}\\
+\hat{c_m}&=&\frac{1}{N_m}\sum_{x_i\in D_m(j,s)}y_i,\ m=1,2
+\end{eqnarray}
+\item[5] 对这两个子区域$D_i,\ i=1,2$，以$D_i$为训练集，以$A$为特征集，递归地调用$1\sim 5$，得到子树$T_i$，返回$T_i$
+\item[6] 将输入空间划分为$M$个区域$D_1,D_2,\cdots,D_M$，生成决策树
+\begin{eqnarray}
+f(x)=\sum_{m=1}^M c_m1(x\in D_m)
+\end{eqnarray}
+\end{itemize}
 
 
-
+注：对比ID3和C4.5算法，由于回归树少了将特征集进行剔除，即少了第5步以$A-\{A_g\}$为特征集，因而少了这一步：
+\begin{itemize}
+\item[2] 若$A=\emptyset$，则$T$为单节点树，并将$D$中实例的输出的均值$\hat{c}=\frac{1}{N_{|D|}}\sum_{x_i\in D}y_i$作为该结点的输出值，返回$T$
+\end{itemize}
 

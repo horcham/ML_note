@@ -50,7 +50,7 @@ P(|\phi-\hat{\phi}|>\gamma)\leq 2e^{-2\gamma^2m}
 \begin{eqnarray}
 \hat{\theta}=\arg\min_\theta\hat{\epsilon}(h_\theta)
 \end{eqnarray}
-我们将这种方法称为经验风险最小化（ERM（empirical risk minimization ）），算法的结果为$\hat{h}=h_\hat{\theta}$。我们将ERM看作最“基础”的算法。
+我们将这种方法称为经验风险最小化（ERM（empirical risk minimization ）），算法的结果为$\hat{h}=h_{\hat{\theta}}$。我们将ERM看作最“基础”的算法。
 
 为了简化讨论，我们定义假设类（hypothesis class）$\mathcal{H}$为以一种学习算法为基础的所有分类器。比如线性回归，则$\mathcal{H}=\{h_\theta:h_\theta=1\{\theta^Tx\geq 0\},\theta\in \mathbb{R}^{n+1}\}$是所有基于$\mathcal{X}$（输入域）的，判定边界为线性的分类器。
 
@@ -68,7 +68,7 @@ P(|\phi-\hat{\phi}|>\gamma)\leq 2e^{-2\gamma^2m}
 \item 说明其中应用了$\hat{h}$的泛化误差的上界
 \end{itemize}
 
-任选一个$h_i\in \mathcal{H}}$并固定。考虑一个伯努利随机变量$Z$，对于采样$(x,y)\in \mathcal{D}$，为$Z=1\{h_i(x)\neq y\}$。类似的，我们定义$Z_j=1\{h_i(\sample{x}{j})\neq\sample{y}{j}\}$。$Z$，$Z_j$对$\mathcal{D}$服从独立同分布。
+任选一个$h_i\in \mathcal{H}$并固定。考虑一个伯努利随机变量$Z$，对于采样$(x,y)\in \mathcal{•}cal{D}$，为$Z=1\{h_i(x)\neq y\}$。类似的，我们定义$Z_j=1\{h_i(\sample{x}{j})\neq\sample{y}{j}\}$。$Z$，$Z_j$对$\mathcal{D}$服从独立同分布。
 
 对于随机的样本的误分类概率，$\epsilon(h)$为$Z$和$Z_j$的期望值。同时，训练误差如下
 \begin{eqnarray}
@@ -172,7 +172,7 @@ VC(\mathcal{H})=\max\{ m:\prod_\mathcal{H}(m)=2^m \}
 \end{eqnarray}
 $VC(\mathcal{H})=d$表明存在大小为$d$的示例集能被假设类$\mathcal{H}$打散。若$\mathcal{H}$能打散任意大小的集合，则$VC(\mathcal{H})=\infty$。若存在大小为$d$的示例集能被$\mathcal{H}$打散，但不存在任何大小为$d+1$的示例集能被$\mathcal{H}$打散，则$\mathcal{H}$的VC维是$d$。这就意味着不是多有大小为$d$的示例集都能被假设类$\mathcal{H}$打散，VC维的定义与数据分布$\mathcal{D}$无关。因此，在数据分布未知时仍能计算出假设类$\mathcal{H}$的VC维。
 
-对于下图的数据，我们可以用二分类线性分类器$(h(x)=1\{\theta_0+\theta_1\x_1+\theta_2x_2\})$所组成的假设类$\mathcal{H}$来打散，为以下八种情况
+对于下图的数据，我们可以用二分类线性分类器$(h(x)=1\{\theta_0+\theta_1 x_1+\theta_2 x_2\})$所组成的假设类$\mathcal{H}$来打散，为以下八种情况
 \begin{center}
 \includegraphics[scale=0.8]{../figures/LT2.PNG} \\
 \includegraphics[scale=1]{../figures/LT3.PNG}

@@ -89,7 +89,7 @@ w=S_w^{-1}\frac{k}{\lambda}(\mu_0-\mu_1)
 w=S_w^{-1}(\mu_0-\mu_1)
 \end{eqnarray}
 对于$S_w^{-1}$的计算，为了数值解的稳定性，通常对$S_w$进行奇异值分解，有
-$S_w=U\SigmaV^T$，之后有$S_w^{-1}=V\Sigma^{-1}U^T$。
+$S_w=U\Sigma V^T$，之后有$S_w^{-1}=V\Sigma^{-1}U^T$。
 
 对于一个新的数据点$x$，计算其投影点分别到$w^T\mu_1$和$w^T\mu_2$的距离，作差，有
 \begin{eqnarray}
