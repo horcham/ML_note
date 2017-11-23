@@ -75,8 +75,8 @@ g_R(D,a)=\frac{g(D,a)}{H_a(D)}
 a_*=\arg\max_{a\in A}g_R(D,a)
 \end{eqnarray}
 
-\subsubsection{基尼指数}
-分类问题中，假设有$K$个类，样本点属于第$k$类的概率为$p_k$，则概率分布的基尼指数定义为
+\subsubsection{Gini指数}
+分类问题中，假设有$K$个类，样本点属于第$k$类的概率为$p_k$，则概率分布的Gini指数定义为
 \begin{eqnarray}
 Gini(p)=\sum_{k=1}^K p_k(1-p_k)=1-\sum_{k=1}^K p_k^2
 \end{eqnarray}
@@ -96,6 +96,8 @@ Gini(D,a)=\sum_{i=1}^n \frac{|D_i|}{|D|}Gini(D_i)
 \begin{eqnarray}
 a_*=\arg\min_{a\in A}Gini(D,a)
 \end{eqnarray}
+
+Gini指数是熵的简化版。
 
 \subsection{决策树的生成}
 \subsubsection{ID3}
@@ -129,9 +131,9 @@ C4.5采用信息增益比来选择特征
 \subsubsection{CART}
 对回归树用平方误差最小化准则，对分类树用Gini指数最小化准则，进行特征选择，生成二叉树。
 
-1. 回归树的生成
+\paragraph{回归树的生成}
 
-假设$X$和$Y$分别为输入和输出变量，并且$Y$是连续变量，给定训练数据集$ D=\{ (\sample{x}{1},\sample{y}{1}),(\sample{x}{2},\sample{y}{2}),\cdots,(\sample{x}{N},\sample{y}{N}) \} $。回归树将输入空间划分为$M$个单元$D_1,D_2,\cdots,D_M$，且在每个单元上有一个固定值$c_m$，因此回归树模型表示为
+假设$X$和$Y$分别为输入和输出变量，并且$Y$是连续变量，给定训练数据集$ D=\{ (\sample{x}{1},\sample{y}{1}),(\sample{x}{2},\sample{y}{2}),$ $\cdots,(\sample{x}{N},\sample{y}{N}) \} $。回归树将输入空间划分为$M$个单元$D_1,D_2,\cdots,D_M$，且在每个单元上有一个固定值$c_m$，因此回归树模型表示为
 \begin{eqnarray}
 f(x)=\sum_{m=1}^M c_m1(x\in D_m)
 \end{eqnarray}
@@ -150,7 +152,7 @@ f(x)=\sum_{m=1}^M c_m1(x\in D_m)
 
 经过两轮遍历之后，即可选出最优划分变量和最优划分点，以及计算出对应的$\hat{c_m}$。算法如下
 
-\paragraph{最小二乘回归树生成算法}
+\subparagraph{最小二乘回归树生成算法}
 \begin{itemize}
 \item 输入：训练数据集$D$，特征集$A$，阈值$\epsilon$
 \item 输出：回归树$f(x)$
@@ -190,3 +192,27 @@ f(x)=\sum_{m=1}^M c_m1(x\in D_m)
 \item[2] 若$A=\emptyset$，则$T$为单节点树，并将$D$中实例的输出的均值$\hat{c}=\frac{1}{N_{|D|}}\sum_{x_i\in D}y_i$作为该结点的输出值，返回$T$
 \end{itemize}
 
+
+\paragraph{分类树的生成}
+
+分类树用基尼指数选择最优特征，同时决定该特征的最优二值切分点，
+\subparagraph{CART生成算法}
+\begin{itemize}
+\item 输入：训练数据集$D$，特征集$A$，Gini指数阈值$\epsilon_g$，样本个数阈值$\epsilon_n$
+\item 输出：CART决策树
+\item[1] 若$D$中所有实例属于同一类$C_k$，则$T$为单节点树，并将类$C_k$作为该结点的类标记，返回$T$
+\item[2] 若$D$中所有实例个数小于样本个数阈值$\epsilon_n$，则取$D$中实例数最大的类$C_k$作为该结点的类标记，返回$T$
+\item[3] 若$A=\emptyset$，则$T$为单节点树，并将$D$中实例数最大的类$C_k$作为该结点的类标记，返回$T$
+\item[4] 否则，计算$A$中各特征对$D$的Gini指数。计算时，对每一个特征$A_i$，该特征每个可能取的值$a_j$，根据$A$是否等于$a_j$，将样本点$D$分割成$D_1$，$D_2$两部分，即
+\begin{eqnarray}
+D_1=\{ (x,y)\in D|A_i=a_j \},\ \ D_2 = D-D_1
+\end{eqnarray}
+分割之后，计算在特征$A_i=a_j$时，集合$D$的Gini指数
+\begin{eqnarray}
+Gini(D,A_i=a_j)=\frac{|D_1|}{|D|}Gini(D_1)+\frac{|D_2|}{|D|}Gini(D_2)
+\end{eqnarray}
+计算所有特征$A$以及所有可能取值$a$的Gini指数。选择Gini指数最小的特征$A^*$及其对应的切分点$a^*$分别作为最优特征与最优切分点，其对应的Gini指数为$Gini_{A^*}$。
+\item[5] 如果$A^*$的Gini指数$Gini_{A^*}$小于阈值$\epsilon_g$，则置$T$为单结点树，并将$D$中实例数最大的类$C_k$作为该节点的类标记，返回$T$
+\item[6] 否则，对最优特征$A^*$的最优划分$a^*$，依是否为$a^*$，将$D$分割为两个非空子集$D_1$，$D_2$，将$D_i,\ i=1,2$中实例数最大的类作为标记，构建子结点，由节点及其子结点构成树$T$，返回$T$
+\item[7] 对第$i$个子结点，以$D_i,\ i=1,2$为训练集，递归地调用$1\sim 6$，得到子树$T_i$，返回$T_i$
+\end{itemize}
