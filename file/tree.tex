@@ -216,3 +216,62 @@ Gini(D,A_i=a_j)=\frac{|D_1|}{|D|}Gini(D_1)+\frac{|D_2|}{|D|}Gini(D_2)
 \item[6] 否则，对最优特征$A^*$的最优划分$a^*$，依是否为$a^*$，将$D$分割为两个非空子集$D_1$，$D_2$，将$D_i,\ i=1,2$中实例数最大的类作为标记，构建子结点，由节点及其子结点构成树$T$，返回$T$
 \item[7] 对第$i$个子结点，以$D_i,\ i=1,2$为训练集，递归地调用$1\sim 6$，得到子树$T_i$，返回$T_i$
 \end{itemize}
+
+\subsection{决策树的剪枝}
+\subsubsection{预剪枝}
+在特征选择后，选定了将采用特征$a$进行下一步划分生成子树。在这之前，先通过预剪枝，比较划分前和划分后对与验证集的准确率。若划分前的验证集的准确率大于等于划分后的验证集的准确率，则进行预剪枝，即不做下一步划分，否则做下一步划分。
+\begin{itemize}
+\item 输入：验证数据集$D_t$，最优特征$a$
+\item 是否按照最优特征$a$进行下一步划分
+\item[1] 取$D_t$中实例数最大的类$C_k$作为该节点的类标记，验证集准确率为
+\begin{eqnarray}
+acc_{D_t}=\frac{1}{|D_t|}\sum_{x_i\in D_t}1\{y_i=C_k\}
+\end{eqnarray}
+\item[2] 按照最优特征$a$，将$D_t$分割成若干个非空子集$D_{t1},D_{t2},\cdots,D{tn}$，对于每个子集$D_{ti}$，取$D_{ti}$中实例数最大的类$C_{ti}$作为该节点的类标记，计算验证集精度
+\begin{eqnarray}
+acc_{D_{t\cdot}}=\frac{1}{|D_t|}\sum_{i=1}^n\sum_{x_j\in D_{ti}}1\{ y_j=C_{ti} \}
+\end{eqnarray}
+\item[3] 比较$acc_{D_t}$和$acc_{D_{t\cdot}}$。若$acc_{D_t}<acc_{D_{t\cdot}}$，则按照最优特征$a$进行下一步划分；$acc_{D_t}\geq acc_{D_{t\cdot}}$，则不进行下一步划分
+\end{itemize}
+\subsubsection{后剪枝}
+\paragraph{代价复杂剪枝}设树$T$的叶节点个数为$|T|$，$t$是树$T$的叶节点，该节点有$N_t$个样本点，其中$k$类的样本点有$N_{tk}$个，$k=1,2,\cdots,K$，$H_t(T)$为叶节点$t$上的经验熵，$\alpha\geq 0$为参数，定义决策树学习的损失函数为
+\begin{eqnarray}
+C_\alpha(T)=\sum_{t=1}^{|T|} N_tH_t(T)+\alpha|T|
+\end{eqnarray}
+其中，经验熵为
+\begin{eqnarray}
+H_t(T)=-\sum_k\frac{N_{tk}}{N_t}\log\frac{N_{tk}}{N_t}
+\end{eqnarray}
+将损失函数右端第一项记为、
+\begin{eqnarray}
+C(T)=\sum_{t=1}^{|T|} N_th_t(T)=-\sum_{t=1}^{|T|}\sum_{k=1}^K N_{tk}\log\frac{N_{tk}}{N_t}
+\end{eqnarray}
+于是有
+\begin{eqnarray}
+C_\alpha(T)=C(T)+\alpha|T|
+\end{eqnarray}
+其中，$C(T)$为模型对训练数据的预测误差，$|T|$为模型复杂度，参数$\alpha\geq	 0$控制两者之间的影响，大的$\alpha$偏向于使用简单的模型，小的$\alpha$偏向于使用复杂的模型。
+\subparagraph{代价复杂剪枝}
+\begin{itemize}
+\item 输入：生成算法产生的整个树$T$，参数$\alpha$
+\item 输出：修剪后的子树$T_\alpha$
+\item[1] 计算每个节点的经验熵
+\item[2] 递归地从树的叶节点向上回缩。设一组叶节点回缩到其父节点之前与之后的整体树分别为$T_B$与$T_A$，对应的损失函数分别为$C_\alpha(T_B)$与$C_\alpha{T_A}$，若
+\begin{eqnarray}
+C_\alpha(T_A)\leq C_\alpha(T_B)
+\end{eqnarray}
+则进行剪枝，即将父节点变为新的叶节点。
+\item[3] 返回(2)，知道不能继续为止，得到损失函数最小的子树$T_\alpha$
+\end{itemize}
+\paragraph{误差降低剪枝}
+\begin{itemize}
+\item 输入：生成算法产生的整个树$T$
+\item 输出：修剪后的子树$T_\alpha$
+\item[1] 计算未回缩之前的树（记为$T_B$）的误差$C(T_B)$
+\item[2] 递归地从树的叶节点向上回缩，计算回缩之后的树（记为$T_A$）的误差$C(T_A)$。如果
+\begin{eqnarray}
+C(T_A)\leq C(T_B)
+\end{eqnarray}
+则进行剪枝。
+\item[3] 重复进行步骤$1\sim 2$，知道不能继续为止，得到损失函数最小的子树$T$
+\end{itemize}
