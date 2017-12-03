@@ -292,9 +292,39 @@ T_\alpha=
 \item[1] 如何在属性值缺失的情况下进行划分属性选择？这是树生成时的问题。
 \item[2] 给定划分属性，若样本在该属性上的值缺失，如何对样本进行划分。这是对于给定的树，有缺失值的数据该如何判断为哪一类的问题。
 \end{itemize}
-给定数据集$D$和属性$a$，令$\tilde{D}$表示$D$中在属性$a$上没有缺失值的样本子集。对于问题1，根据$\tilde{D}$来判断属性$a$的优劣。假定属性$a$有$V$个取值$\{ a^1,a^2,\cdots,a^V \}$，令$\tilde{D}^v$为$\tilde{D}$中属性$a$上取值为$a^v$的样本子集，$\tilde{D}_k$表示$\tilde{D}$中属于第$k$类（$k=1,2,\cdots,|\Gamma|$）的样本子集。显然，$\tilde{D}=\cup^{|\Gamma|}_{k=1}\tilde{D}_k$，$\tilde{D}=\cup^{V}_{v=1}\tilde{D}_v$。假定为每个样本$x$赋予一个权重$w_x$（$w_x$初始值为1），并定义
+给定数据集$D$和属性$a$，令$\tilde{D}$表示$D$中在属性$a$上没有缺失值的样本子集。对于问题1，根据$\tilde{D}$来判断属性$a$的优劣。假定属性$a$有$V$个取值$\{ a_1,a_2,\cdots,a_V \}$，令$\tilde{D}_v$为$\tilde{D}$中属性$a$上取值为$a_v$的样本子集，$\tilde{C}_k$表示$\tilde{D}$中属于第$k$类（$k=1,2,\cdots,K$）的样本子集。显然，$\tilde{D}=\cup^{K}_{k=1}\tilde{C}_k$，$\tilde{D}=\cup^{V}_{v=1}\tilde{D}_v$。记子集$\tilde{D}_i$中属于类$\tilde{C}_k$的样本集合为$\tilde{D}_{ik}$，即$\tilde{D}_{ik}=\tilde{D}_i\cap \tilde{C}_k$，$|\tilde{D}_{ik}|$为$\tilde{D}_{ik}$的样本个数。假定为每个样本$x$赋予一个权重$w_x$（$w_x$初始值为1），并定义
+
 \begin{eqnarray}
 \rho&=&\frac{\sum_{x\in \tilde{D}}w_x}{\sum_{x\in D}w_x}\\
-\tilde{p}_k&=&\frac{\sum_{x\in \tilde{D}_k}w_x}{\sum_{x\in \tilde{D}}w_x},\ \ (1\leq k \leq |\Gamma|) \\
-\tilde{r}_v&=&\frac{\sum_{x\in \tilde{D}^v}w_x}{\sum_{x\in \tilde{D}}w_x},\ \ (1\leq v \leq V)
+\tilde{p}_k&=&\frac{\sum_{x\in \tilde{C}_k}w_x}{\sum_{x\in \tilde{D}}w_x},\ \ (1\leq k \leq K) \\
+\tilde{r}_v&=&\frac{\sum_{x\in \tilde{D}_v}w_x}{\sum_{x\in \tilde{D}}w_x},\ \ (1\leq i \leq V)
 \end{eqnarray}
+于是可将信息增益计算公式推广为
+\begin{eqnarray}
+\begin{aligned}
+g(D,A) &= \rho\times g(\tilde{D},A)\\
+&= \rho\times 
+\left(
+(H(\tilde{D})-H(\tilde{D}|a))
+\right)
+\end{aligned}
+\end{eqnarray}
+\begin{eqnarray}
+H(D)&=&-\sum_{k=1}^K \frac{|\tilde{C}_k|}{|\tilde{D}|}\log_2\frac{|\tilde{C}_k|}{|\tilde{D}|}
+\end{eqnarray}
+\begin{eqnarray}
+\begin{aligned}
+H(D|a)&=\sum_{i=1}^V \tilde{r}_i H(\tilde{D}|a=a_i))\\
+&=\sum_{i=1}^V \tilde{r}_v \sum_{k=1}^K\frac{|\tilde{D}_{ik}|}{|\tilde{D}_i|}\log_2\frac{|\tilde{D}
+_{ik}|}{|\tilde{D}_i|}
+\end{aligned}
+\end{eqnarray}
+
+对于问题2，若样本$x$在划分属性$a$上的取值已知，则将$x$带入与其取值相对应的子节点，且样本权值在子节点中保持为$w_x$；若样本$x$在划分属性$a$上的取值未知，则将$x$同时划入所有子节点，且样本权值在属性值$a_i$对应的子节点中调整为$\tilde{r}_v\times w_x$
+
+
+
+
+
+
+
