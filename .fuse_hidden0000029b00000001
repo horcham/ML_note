@@ -1,0 +1,131 @@
+\relax 
+\@writefile{toc}{\contentsline {section}{\numberline {1}线性回归与梯度下降}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}符号说明}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}线性回归}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3}LMS与梯度下降法}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4}随机梯度下降法(incremental gradient descent)}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.5}批量梯度下降法(batch gradient descnet)}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.6}线性回归的显式求解}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.7}采取最小平方误差作为损失函数的原因}{8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.8}局部加权线性回归}{9}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}logistic回归}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}梯度下降与logistic回归}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}牛顿方法}{11}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Fisher线性判别分析}{12}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}二类线性判别法}{12}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}分类相关问题}{14}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}多分类学习}{14}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1}一对一策略（One vs One，OvO）}{14}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2}一对其余策略（One vs Rest，OvR）}{15}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}类别不平衡问题}{15}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}欠采样(undersampling)}{15}}
+\@writefile{toc}{\contentsline {paragraph}{EasyEnsemble算法}{16}}
+\@writefile{toc}{\contentsline {paragraph}{BalanceCascade算法}{16}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}过采样(oversampling)}{16}}
+\@writefile{toc}{\contentsline {paragraph}{SMOTE算法}{16}}
+\@writefile{toc}{\contentsline {paragraph}{Borderline-SMOTE1}{17}}
+\@writefile{toc}{\contentsline {paragraph}{Borderline-SMOTE2}{17}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3}权值移动(threshold-moving)}{18}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}指数函数族与广义线性模型}{18}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}伯努利分布导出logistic回归}{18}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}多项式分布导出softmax回归}{18}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}决策树}{20}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}特征选择}{20}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.1}信息增益}{20}}
+\@writefile{toc}{\contentsline {paragraph}{信息增益}{20}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.2}信息增益比}{21}}
+\@writefile{toc}{\contentsline {paragraph}{信息增益比}{21}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.3}Gini指数}{22}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}决策树的生成}{22}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.1}ID3}{22}}
+\@writefile{toc}{\contentsline {paragraph}{ID3算法}{22}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.2}C4.5}{23}}
+\@writefile{toc}{\contentsline {paragraph}{C4.5算法}{23}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.3}CART}{23}}
+\@writefile{toc}{\contentsline {paragraph}{回归树的生成}{23}}
+\@writefile{toc}{\contentsline {subparagraph}{最小二乘回归树生成算法}{24}}
+\@writefile{toc}{\contentsline {paragraph}{分类树的生成}{25}}
+\@writefile{toc}{\contentsline {subparagraph}{CART生成算法}{25}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}决策树的剪枝}{26}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.3.1}预剪枝}{26}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.3.2}后剪枝}{26}}
+\@writefile{toc}{\contentsline {paragraph}{代价复杂剪枝}{26}}
+\@writefile{toc}{\contentsline {subparagraph}{代价复杂剪枝}{27}}
+\@writefile{toc}{\contentsline {paragraph}{误差降低剪枝}{27}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}连续值处理}{27}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5}缺失值处理}{28}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}支持向量机}{28}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}说明}{29}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}函数间隔与几何间隔}{29}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.2.1}函数间隔}{29}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.2.2}几何间隔}{29}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}最优间隔分类器}{31}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.4}约束优化问题}{31}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.4.1}等式约束优化问题}{31}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.4.2}不等式约束优化问题}{32}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.5}最优间隔分类器的求解}{34}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.6}核方法}{35}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.6.1}高斯核函数}{37}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.6.2}核的有效性}{37}}
+\@writefile{toc}{\contentsline {paragraph}{Mercer 定理}{38}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.7}正则化和非线性可分情况}{39}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.8}SMO算法}{40}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.8.1}坐标提升}{41}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.8.2}SMO}{42}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}学习理论}{44}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}偏差与方差的权衡}{44}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}引入}{44}}
+\@writefile{toc}{\contentsline {paragraph}{引理\ 联合界}{44}}
+\@writefile{toc}{\contentsline {paragraph}{引理\ Hoeffding不等式}{45}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.3}有限假设类$\mathcal  {H}$的情况}{45}}
+\@writefile{toc}{\contentsline {paragraph}{定理}{47}}
+\@writefile{toc}{\contentsline {paragraph}{推论}{47}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.4}无限假设类$\mathcal  {H}$的情况}{47}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.4.1}VC维}{48}}
+\@writefile{toc}{\contentsline {paragraph}{定义\ 增长函数}{48}}
+\@writefile{toc}{\contentsline {paragraph}{定理}{48}}
+\@writefile{toc}{\contentsline {paragraph}{定义\ VC维}{48}}
+\@writefile{toc}{\contentsline {paragraph}{定理}{49}}
+\@writefile{toc}{\contentsline {paragraph}{推论}{49}}
+\@writefile{toc}{\contentsline {section}{\numberline {9}正则化与模型选择}{50}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}交叉验证}{50}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.1.1}留出交叉验证}{50}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.1.2}k折交叉验证}{50}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.1.3}留一交叉验证}{51}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.1.4}自助法}{51}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}性能度量}{51}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.2.1}错误率与精度}{51}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.2.2}查准率、查全率与F1}{52}}
+\@writefile{toc}{\contentsline {paragraph}{P-R曲线的绘制}{52}}
+\@writefile{toc}{\contentsline {paragraph}{平衡点(Break-Even Point，简称BEP)}{53}}
+\@writefile{toc}{\contentsline {paragraph}{$F1$度量}{53}}
+\@writefile{toc}{\contentsline {paragraph}{$F_\beta $度量}{53}}
+\@writefile{toc}{\contentsline {paragraph}{宏查准率(macro-P)、宏查全率(macro-R)与宏F1(macro-F1)}{54}}
+\@writefile{toc}{\contentsline {paragraph}{微查准率(micro-P)、微查全率(micro-R)与微F1(micro-F1)}{54}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.2.3}ROC与AUC}{54}}
+\@writefile{toc}{\contentsline {paragraph}{ROC曲线的绘制}{54}}
+\@writefile{toc}{\contentsline {paragraph}{有限样例的近似ROC曲线绘制}{54}}
+\@writefile{toc}{\contentsline {paragraph}{AUC计算}{55}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.2.4}代价敏感错误率与代价曲线}{55}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.3}特征选择}{55}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.3.1}封装模型特征选择}{55}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.3.2}过滤特征选择}{56}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.4}贝叶斯统计与规范化}{57}}
+\@writefile{toc}{\contentsline {section}{\numberline {10}贝叶斯分类器}{58}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.1}贝叶斯决策论}{58}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.2}极大似然估计}{59}}
+\@writefile{toc}{\contentsline {section}{\numberline {11}附录}{60}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.1}SVD分解}{60}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.2}范数}{60}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {11.2.1}常用向量范数}{60}}
+\@writefile{toc}{\contentsline {paragraph}{p-范数}{60}}
+\@writefile{toc}{\contentsline {paragraph}{1-范数}{60}}
+\@writefile{toc}{\contentsline {paragraph}{2-范数}{60}}
+\@writefile{toc}{\contentsline {paragraph}{$\infty $-范数}{60}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {11.2.2}常用矩阵范数}{60}}
+\@writefile{toc}{\contentsline {paragraph}{p-范数}{60}}
+\gdef\minted@oldcachelist{,
+  default.pygstyle,
+  default-pyg-prefix.pygstyle}
+\@writefile{toc}{\contentsline {paragraph}{2-范数}{61}}
+\@writefile{toc}{\contentsline {paragraph}{$\infty $-范数}{61}}
