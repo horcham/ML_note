@@ -1,0 +1,3 @@
+SVM, P39, 最小化w,b多出了\gamma
+SVM, P40, L1正则项
+SVM, P41, 被最优化
