@@ -1,0 +1,71 @@
+
+\newcommand{\ctitle}[1]{\begin{center}\zihao{3}\heiti #1\end{center}}
+
+\newcommand{\cauthorinfo}[5]{\begin{center}\zihao{5}\fangsong#1 \\ \zihao{-5}\songti {#2} #3 \\ \zihao{-5}\songti #4 #5\end{center}}
+
+\newcommand{\cabstract}[1]{
+	\begin{center}
+		\zihao{-4} \heiti 摘要
+	\end{center}
+	\quad \quad#1
+}
+\newcommand{\etitle}[1]{\begin{center}\zihao{3}\heiti #1\end{center}}
+
+\newcommand{\eauthorinfo}[5]{\begin{center}\zihao{4}\fangsong#1 \\ \zihao{-5}\songti {#2} #3 \\ \zihao{-5}\songti #4 #5\end{center}}
+
+\newcommand{\eabstract}[1]{
+	\begin{center}
+		\zihao{-4} \heiti Abstract
+	\end{center}
+	\quad \quad#1
+}
+
+
+\newcommand{\pythonCode}[1]{
+\begin{minted}
+[
+frame=lines,
+framesep=2mm,
+baselinestretch=1.2,
+fontsize=\footnotesize,
+linenos
+]
+{python}
+#1
+\end{minted}
+}
+
+\newcommand{\samplet}[3]{
+{#1}_{#3}^{({#2})}
+}
+
+
+\newcommand{\sample}[2]{
+{#1}^{({#2})}
+}
+
+
+\newcommand{\vectornew}[2]{
+\left(
+{#1}_{1},\cdots,{#1}_{#2}
+\right)
+}
+
+\newcommand{\vvectornew}[2]{
+\begin{pmatrix}
+{#1}_1\\
+{#1}_2\\
+\vdots\\
+{#1}_{#2}
+\end{pmatrix}
+}
+
+
+\newcommand{\matrixthird}[3]{
+\begin{pmatrix}
+{#1}_{11} & {#1}_{12} & \cdots & {#1}_{1{#3}}\\
+{#1}_{21} & {#1}_{22} & \cdots & {#1}_{2{#3}}\\
+\vdots & \vdots & \ddots & \vdots \\
+{#1}_{{#2}1} & {#1}_{{#2}2} & \cdots & {#1}_{{#2}{#3}}
+\end{pmatrix}
+}

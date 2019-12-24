@@ -1,13 +1,12 @@
 \documentclass{thesis/PatternRecognition}
-\usepackage{style/scnu}
-\usepackage{style/mynewcommand}
+\usepackage{thesis/scnu}
+\usepackage{thesis/mynewcommand}
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{color}
 \usepackage{multirow}
 \usepackage{booktabs}
-\usepackage{enumerate}
-\usepackage{amsmath}
+
 
 \graphicspath {{figures/}}%The folder containing pictures
 \captionsetup{font={footnotesize}}
@@ -24,7 +23,7 @@
 \colorlet{specmethodcolour}{violet}
 \colorlet{commentcolour}{green!50!black}
 
-%\numberwithin{eqnarray}{section}
+
 
 
 \begin{document}
@@ -63,25 +62,36 @@ emph={[7]range},
 emphstyle={[7]\color{keywordcolour}\bfseries},
 emph={[8]1, 2, 3, 4, 5, 6, 7, 8, 9, 0},
 emphstyle={[8]\color{keywordcolour}\bfseries},
-escapeinside=``
 }
 
 
 
-\input{file/abstract}
-
-\input{information/info}
+\ctitle{newcommand guide}
 \tableofcontents       %输出目录
-\newpage
-\input{file/Linear_Regression_and_gradient_decent}
-\input{file/logistic}
-\input{file/LDA}
-\input{file/classification_problems}
-\input{file/exponential_family_distribution_and_generalized_linear_regression}
-\input{file/tree}
-\input{file/SVM}
-\input{file/learning_theory}
-\input{file/Regularization_and_model_selection}
-\input{file/Bayesian}
-\input{file/appendix}
+
+sample\{x\}\{i\}
+\begin{eqnarray}
+\sample{x}{i}
+\end{eqnarray}
+
+samplet\{x\}\{i\}\{k\}
+\begin{eqnarray}
+\samplet{x}{i}{k}
+\end{eqnarray}
+
+vectornew\{x\}\{n\}
+\begin{eqnarray}
+\vectornew{x}{n}
+\end{eqnarray}
+
+vvectornew\{x\}\{n\}
+\begin{eqnarray}
+\vvectornew{x}{n}
+\end{eqnarray}
+
+matrixthird\{K\}\{n\}\{m\}
+\begin{eqnarray}
+\matrixthird{K}{n}{m}
+\end{eqnarray}
+
 \end{document}
